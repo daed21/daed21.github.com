@@ -6,6 +6,9 @@
 <title>无标题文档</title>
 <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="touchSwipe.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 <script>
 $(function() {
 //swipe 的dome
@@ -21,9 +24,7 @@ $(this).text("你用"+fingerCount+"个手指以"+duration+"秒的速度向" + di
 },
 });
 
-
- 
-    //手机滑动效果
+//手机滑动效果
     var swiptleft = 0;
     var swiptw = $(".touchswipe").width() - $(".block").width();
     $(".touchswipe").swipe({
@@ -34,6 +35,13 @@ $(this).text("你用"+fingerCount+"个手指以"+duration+"秒的速度向" + di
                     left: swiptw + 'px'
                 },300);   
                 //alert("打开"+swiptleft);
+                        $(".modal-body").html("您已打开该选项");
+                        $("#myModal").modal();
+                        $(".touchswipe p.stext").text("打开状态，向左滑动关闭");
+
+
+
+
             }
             else if(swiptleft <= 150) {
                 swiptleft = 0;
@@ -42,7 +50,8 @@ $(this).text("你用"+fingerCount+"个手指以"+duration+"秒的速度向" + di
                 },300).animate({
                     left: 0 + 'px'
                 },300);
-                 //alert("距离不够"+swiptleft);
+                 //alert("距离不够"+swiptleft);  
+                  $(".touchswipe p.stext").text("向右滑动距离大点~亲");         
             }
              
         },
@@ -54,6 +63,14 @@ $(this).text("你用"+fingerCount+"个手指以"+duration+"秒的速度向" + di
                         left: 0 + 'px'
                     },300);   
                     //alert("关闭状态");
+                        $(".modal-body").html("您已关闭该选项"); 
+                        $("#myModal").modal(); 
+                        $(".touchswipe p.stext").text("您已关闭该选项,向右滑动打开");
+                        // $(".swipe_block").fadeOut();
+
+
+
+
                 }
                 else if(swiptleft >= -150){
                      swiptleft = 0;
@@ -62,23 +79,47 @@ $(this).text("你用"+fingerCount+"个手指以"+duration+"秒的速度向" + di
                     },300).animate({
                     left: 250 + 'px'
                 },300);//alert("距离不够");
+                    $(".touchswipe p.stext").text("向左滑动距离大点~亲"); 
 
                 }
              
     }
     });
- 
- 
 
 
 });
 </script>
+<style type="text/css">
+.touchswipe {margin:0 auto; width:300px;height:100px; background:#666;-webkit-user-select:none; text-align:center; line-height:100px; color:#fff;position:relative;}
+.touchswipe .block {width:50px;height:5px;bottom:0; background:#f00;position:absolute;}
+.stext {-webkit-user-select:none;cursor:default;}    
+</style>
 </head>
 <body>
 <div id="test" style="height:200px; background:#C63;-webkit-user-select:none; text-align:center; line-height:200px; color:#fff">swipe 的dome</div>
 <div id="test2" style="height:200px; background:#C63; margin-top:20px;-webkit-user-select:none; text-align:center; line-height:200px; color:#fff">swipeStatus的dome</div>
 
 
-<div class="touchswipe" style="margin:0 auto; width:300px;height:100px; background:#666;-webkit-user-select:none; text-align:center; line-height:100px; color:#fff;position:relative;"><div class="borrowlistcon"><div class="block" style="width:50px;height:100px; background:#f00;position:absolute;">按钮</div></div></div>
+<div class="swipe_block">
+    <div class="touchswipe "><div class="block">开关</div><p class="stext">向右滑动打开</p></div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">消息</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
