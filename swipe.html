@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="touchSwipe.min.js"></script>
+<script>
+$(function() {
+//swipe 的dome
+$("#test").swipe( {
+swipe:function(event, direction, distance, duration, fingerCount) {
+$(this).text("你用"+fingerCount+"个手指以"+duration+"秒的速度向" + direction + "滑动了" +distance+ "像素 " );
+},
+});
+//swipeStatus的dome
+$("#test2").swipe( {
+swipeStatus:function(event, phase, direction, distance, duration,fingerCount) {
+$(this).text("你用"+fingerCount+"个手指以"+duration+"秒的速度向" + direction + "滑动了" +distance+ "像素 " +"你在"+phase+"中");
+},
+});
+
+
+ 
+    //手机滑动效果
+    var swiptleft = 0;
+    var swiptw = $(".touchswipe").width() - $(".block").width();
+    $(".touchswipe").swipe({
+        swipeRight: function (event, direction, distance, duration, fingerCount) {
+            swiptleft = swiptleft + distance; //alert(swiptleft);
+            if (swiptleft > 150) {swiptleft = 0;
+                $(".touchswipe .block").animate({
+                    left: swiptw + 'px'
+                },300);   
+                //alert("打开"+swiptleft);
+            }
+            else if(swiptleft <= 150) {
+                swiptleft = 0;
+                $(".touchswipe .block").animate({
+                    left: distance + 'px'
+                },300).animate({
+                    left: 0 + 'px'
+                },300);
+                 //alert("距离不够"+swiptleft);
+            }
+             
+        },
+ 
+        swipeLeft : function (event, direction, distance, duration, fingerCount) {
+                swiptleft = swiptleft - distance; //alert(swiptleft);
+                if (swiptleft < -150) {swiptleft = 0;
+                    $(".touchswipe .block").animate({
+                        left: 0 + 'px'
+                    },300);   
+                    //alert("关闭状态");
+                }
+                else if(swiptleft >= -150){
+                     swiptleft = 0;
+                    $(".touchswipe .block").animate({
+                        left:distance + 'px'
+                    },300).animate({
+                    left: 250 + 'px'
+                },300);//alert("距离不够");
+
+                }
+             
+    }
+    });
+ 
+ 
+
+
+});
+</script>
+</head>
+<body>
+<div id="test" style="height:200px; background:#C63;-webkit-user-select:none; text-align:center; line-height:200px; color:#fff">swipe 的dome</div>
+<div id="test2" style="height:200px; background:#C63; margin-top:20px;-webkit-user-select:none; text-align:center; line-height:200px; color:#fff">swipeStatus的dome</div>
+
+
+<div class="touchswipe" style="margin:0 auto; width:300px;height:100px; background:#666;-webkit-user-select:none; text-align:center; line-height:100px; color:#fff;position:relative;"><div class="borrowlistcon"><div class="block" style="width:50px;height:100px; background:#f00;position:absolute;">按钮</div></div></div>
+</body>
+</html>

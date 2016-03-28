@@ -90,15 +90,11 @@ $(document).ready(function(){
 		        $(this).addClass("shake"); var mrnum = parseInt(Math.floor(Math.random()*1000))+1000;
 	        	setTimeout(reds,mrnum);console.log(mrnum); }
 	});
-
-
 function reds(){
 			$(".red").removeClass("shake");
 			$(".windows,.opacity").fadeIn();
 		}
-
 	$(".close").click(function(){$(this).parent().fadeOut();$(".opacity").fadeOut();cred=1;console.log(cred);});
-
 });
 </script>
 </head>
@@ -109,6 +105,5 @@ function reds(){
 	<div class="text">2016祝您节日愉快！</div>
 	<div class="close"><img src="images/close.png"/></div>
 </div>
-
 </body>
 </html>
