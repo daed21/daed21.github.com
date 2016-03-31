@@ -1,0 +1,260 @@
+﻿@charset "utf-8";
+/*--------------顶部--------------------*/
+#top{max-width:1440px; min-width:1000px;margin-left:auto; margin-right:auto; }
+#top .top{width:1000px; height:45px; padding-top:45px; margin-left:auto; margin-right:auto; position: relative; z-index:5; }
+#top .top  .logo{ width:122px; margin-top:-5px; }
+#top .top  .logo  img{ display:inline-block; width:100%; height:26px;}
+#top .top   .nav{  }
+#top .top  .nav ul{ overflow:hidden;}
+#top .top  .nav ul  li{ float:left; padding-left:60px; }
+#top .top  .nav ul  li  a{ font-family:'Heiti SC Light'; font-size:18px; color:#666666; }
+#top .top  .nav ul ul{ top:70px; display:none; padding-top:15px; 
+float: left;
+position: absolute;
+left: 0px;
+z-index: 99999;
+width: 1000px;
+padding-bottom: 10px;
+font-size:14px;
+overflow: hidden; background:#fff;}
+.jiayongli {width:300px;}
+.shangyongli .sy2dl {width:155px;}
+#top .top  .nav ul ul {float: left;font-size:12px; min-height:440px;}
+#top .top  .nav ul ul li{ padding-left:10px !important; float:left;}
+#top .top  .nav ul ul li a{ font-size:13px!important;}
+.shangyongli {
+    width:500px;
+}
+.jiayongli .daiborder {
+  width: 169px;
+}
+#top .top  .nav ul ul  dl{ float:left;}
+#top .top  .nav ul ul  dl >a {
+    display: inline-block;
+    text-align: left;
+    padding: 2px 0px 2px 4px; font-size:12px;
+}
+#top .top  .nav ul ul dl dd{ padding-left:10px !important;}
+#top .top  .nav ul ul dl dt .zmenuvrv{ font-size:13px !important;}
+#top .top  .nav ul ul dl dt >a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #147DBF;
+    padding:0.8em 0px 0.4em 0.8em !important;
+}
+#top .top  .nav ul ul dl dt >a:hover{ text-decoration:underline;}
+#top .top  .nav ul ul dl dd >a:hover{ text-decoration:underline;}
+#top .top  .nav ul ul dl dd > p a:hover{ text-decoration:underline;}
+#top .top  .nav ul ul .shangyongli .daiborder {width:179px; float:left;}
+.firstline{ margin-left:10px; width:110px;}
+.firstline  dd a{ color:#666 !important;font-weight: bold;}
+#top .top  .nav ul ul li p a{ padding-left:10px;}
+.fwzcid  li{ padding-right:20px;}
+.fwzcid  li{ line-height:27px !important;}
+.fwzcid  li a:hover{ text-decoration:underline !important;}
+/*--------------分类--------------------*/
+#fenlei{ max-width:1440px; min-width:1000px;margin-left:auto; margin-right:auto; height:50px;  background:#7C6137;}
+#fenlei .fl_list{}
+#fenlei .fl_list  ul{ overflow:hidden;}
+#fenlei .fl_list  ul li{ float:left; width:25%; line-height:50px; height:50px; text-align:center;}
+#fenlei .fl_list  ul li  a{ color:#fff; font-size:18px; display: block;width: 100%;font-family:'Heiti SC Medium';}
+#fenlei .fl_list  ul li:hover{background:#BFAB74;}
+#fenlei .fl_list  ul .active{ background:#BFAB74;}
+#fenlei .fl_list  ul li img{margin-top: 15px;}
+
+
+/*-------------- banner --------------------*/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {
+	display: none;
+	-webkit-backface-visibility: hidden;
+	list-style-type: none;
+} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+/*--------------家用分体空调--------------*/
+.ftkt-main{overflow:hidden;max-width:1440px; min-width:1000px;margin-left:auto; margin-right:auto; }
+.ftkt-main .title{color:#fff;height:90px;padding-left:8%; background:url(../Images/index_bg.jpg) repeat-y;}
+.ftkt-main .title .title_top{ line-height:29px; padding-top:20px;   }
+.ftkt-main .title .title_top i{ font-size:22px;font-family:'Heiti SC Light'; font-style:normal;}
+.ftkt-main .title .title_top  em img{ vertical-align:top; margin-right:5px;}
+.ftkt-main .title .title_bottom{ font-family:'Heiti SC Medium'; font-size:16px; line-height:16.8px; padding-top:7px; margin-left:-2px;}
+.ftkt-main .title .title_bottom  em{font-style:normal;font-size:14px; padding:0px 10px 0px 14px;font-family:'Heiti SC Medium';}
+
+/*-------------- 图片滚动-------------- */
+#picScrollwrap{background: url(../Images/product_bg.jpg) no-repeat;max-width:1440px; overflow:hidden;  min-width:1000px;margin-left:auto; margin-right:auto;}
+#picScrollwrap  h3{padding:50px 0px 24px 0px;}
+.picScroll{ position:relative;  margin-bottom:10px; height:300px; overflow:hidden; width:84%; margin:20px  auto 0px; padding:0 22px 0 32px;  }
+.picScroll ul{ overflow:hidden; zoom:1;  font-size:0; letter-spacing:normal; word-spacing:normal; text-align:center;width:600%; }
+.picScroll ul li{ float:left; margin:0px 52px; width:190px;   overflow:hidden; display:inline-block; *display:inline; *zoom:1; vertical-align:top; position:relative;  }
+.picScroll ul li .imgsmall{width:160px; height:68px; padding: 14px 15px 20px; display:inline-block; background:url(../Images/bai_50.png) repeat; }
+.picScroll .prev{ position:absolute;  left:10px; top:30px; display:block; width:27px; height:50px; overflow:hidden; background:url(../Images/jiantou_l.png) no-repeat; cursor:pointer;  }
+.picScroll .next{ position:absolute;  right:10px; top:30px; display:block; width:27px; height:50px; overflow:hidden; background:url(../Images/jiantou_r.png) no-repeat; cursor:pointer;  }
+.picScroll .line{ background:#bfac74; height:4px; width:100%; margin-top:6px;}
+.picScroll .smwz{ margin-top:12px; text-align:center; position:relative;}
+.picScroll .smwz .span1{ width:100%; font-family:'Heiti SC Medium'; font-size:19px; line-height:40px; display:inline-block; color:#7C6137; font-weight:bold; margin-right:18px;}
+.picScroll .smwz .span2{ width:100%; font-family:'Heiti SC Medium';  font-size:11px; line-height:14px;display:inline-block;color:#7C6137; margin-right:6px;}
+.picScroll .smwz .span3{width: 13px;height:13px;display: inline-block;position: absolute;top:40px;background: url(../Images/yuanjt_xiao.png) no-repeat center center; right:55px;}
+.picScroll .smwz .span3  img{ vertical-align:middle; }
+.picScroll ul li.hover2 { margin:0 26px; }
+
+.jkzx_con{ margin-top:0px; background:url(../Images/bai_50.png) repeat; max-width:1440px; overflow:hidden;  min-width:1000px;  margin:0 auto;}
+.jkzx_con  ul{ overflow:hidden; padding:54px 0px 54px 0px; width:100% ; }
+.jkzx_con  ul  li{ float:left; text-align:center; overflow:hidden;width:49.9%;}
+.jkzx_con  ul .first a{ width:44.7%; display:inline-block; position:relative;margin-right:16.6%; margin-left:39.7%;}
+.jkzx_con  ul {}
+.jkzx_con  ul  .first  .pic1{ width:100%; height:auto; }
+.jkzx_con  ul  .first{ border-right:1px solid #d8d1c7;}
+.jkzx_con  ul  .last a{width:44.7%; display:inline-block; position:relative;margin-left:16.6%; margin-right:39.7%; }
+.jkzx_con  ul  .last .pic1{ width:100%; height:auto; }
+.jkzx_con  ul  li  a{ }
+.jkzx_con  ul  li>img{ width:322px; height:158px; position: relative;  }
+.jkzx_con  ul  li  .bg{background:url(../Images/bai_50.png) repeat; width:100%; height:57px; position:absolute; bottom:0px; margin:0 auto;}
+.jkzx_con  ul  li  .mask{ height:55px; width:100%; text-align:center;border-bottom:2px solid  #7c6136; position:absolute; bottom:0px; margin:0 auto;}
+.jkzx_con  ul  li  .mask  p{ color:#909090; font-size:12px; padding-top:10px; line-height:14px;}
+.jkzx_con  ul  li  .mask  p  em{ font-style:normal;font-size:12px;font-family:'Heiti SC Medium';}
+.jkzx_con  ul  li  .mask  p  em img{ vertical-align: bottom;}
+.jkzx_con  ul  li  .mask  span{ display:block; font-family:'Heiti SC Medium'; font-size:13px; text-align:center; padding-top:8px; color:#666666;}
+
+.ql{max-width:1440px; overflow:hidden;  min-width:1000px;margin-left:auto; margin-right:auto; position:relative;}
+.ql .first1{ width:55.6%; float:left; position:relative;}
+.ql .first1 .tpzs{max-width:100%; height:auto; }
+.ql .ql_wz{margin-left:5%; width:39%;}
+.ql .ql_wz{margin-top:4.8%;  }
+.ql .ql_wz  h2{}
+.ql .ql_wz  h2  span{font-family:'Heiti SC Medium'; font-size:28px; margin-right:13px;line-height:36px; color:#7C6137; font-weight:300; }
+.ql .ql_wz  h2  em{font-size:25px; line-height:36px; color:#7C6137; font-weight:300;font-family:'Heiti SC Medium'; }
+.ql .ql_wz  p{ font-family:'Heiti SC Medium';  font-size:16px; line-height:24px; margin-top:5px; color:#666666; max-width:463px;}
+.ql  .four_cire{ margin:32px 0px 40px 50px; overflow:hidden;}
+.ql  .four_cire ul{ overflow:hidden; width:80%}
+.ql  .four_cire ul  li{ float:left; width:25%; text-align:left; }
+.ql  .four_cire ul li p{ text-align:left; font-family:'Heiti SC Medium'; font-size:14px; color:#666; line-height:17px; padding-top:6px;   }
+.ljxq em img{ vertical-align:middle; margin-right:5px;  }
+.ljxq  a{font-family:'Heiti SC Light'; font-size:18px; line-height:22px; color:#BFAB74;}
+.ql2{max-width:1440px; overflow:hidden;min-width:1000px;margin-left:auto; margin-right:auto;}
+.ql2  .ql_wz{width:35.8%; padding:8% 0.04% 0px 8%; }
+.ql2  .ql_wz  h2 {margin-bottom:25px;width:90%}
+.ql  .ql_wz  h2 {margin-bottom:10px;}
+.ql2  .ql_wz  h2 span{font-family:'Heiti SC Medium'; font-size:28px; line-height:36px; margin-right:13px; color:#7C6137; font-weight:300;}
+.ql2  .ql_wz  h2  em{font-size:25px; line-height:36px; color:#7C6137; font-weight:300;font-family:'Heiti SC Medium'; }
+.ql2  .ql_wz  p{ font-family:'Heiti SC Medium';  font-size:16px; line-height:24px; margin-top:5px; color:#666666; width:85%}
+.ql2  .secend{width:55.6%; }
+.ql2  .ql_wz .ljxq{margin-top:45px;}
+.ql2  .secend  img{max-width:100%;height:auto;}
+
+.footer{ width:1000px; margin-top:80px; margin:80px auto 0px; overflow:hidden; }
+.footer dl{ width:17%; text-align:left; float:left; margin-right:3.5%; }
+.footer  dl dt {color:#26A5FF;font-size: 15px; line-height: 16px;font-family:'Heiti SC Medium';}
+.footer  dl dt{ padding-bottom:1em;border-bottom: 1px dashed #404040;}
+.footer dl dd {border-bottom: 1px dashed #404040; padding:8px 0px;}
+.footer  dl dd a{font-size: 15px; line-height: 16px; color:#717171;font-family:'Heiti SC Medium';}
+.footer  .last{ margin-right:0px !important;}
+
+.cop{ margin-top:54px; width:1000px;margin:54px auto 100px; overflow:hidden;}
+.cop .banquan{ width:47%; float:left;font-size:13px;}
+.cop .banquan{ float:left;font-family:'Heiti SC Medium';}
+.cop .shh{width:53%;}
+.cop .shh  ul{ overflow:hidden; float:right;}
+.cop .shh  ul li{ float:left; border-right:1px solid #787878; text-align:right;}
+.cop .shh  ul .last{ border-right:0px !important;}
+.cop .shh  ul li a{ padding:0px 1em;color:#717171;font-family:'Heiti SC Medium'; font-size:13px;}
+
+/*产品列表*/
+.banners{max-width:1440px; min-width:1000px; margin:0 auto;}
+.banners  img{ display:block; width:100%; height:auto;}
+.title_top  .first{ font-size:24px;font-family:'Heiti SC Medium'; line-height:29px;}
+.title_top  .send{ font-size:24px; line-height:29px; font-weight:600; margin-left:10px;}
+.product_list{ margin:60px auto; max-width:1440px; overflow:hidden; min-width:1000px; }
+.product_list .title{ height:48px; border-bottom:4px solid #c1ac75; line-height:48px;margin-left:8%;margin-right:8%;}
+.product_list .title img{ vertical-align:middle; padding:14px 20px;}
+.product_list .title  .active{ background:#7c6038; height:48px; display:inline-block;margin: 0px;border-left:5px solid #fff;}
+.emax7{margin-top:60px; margin-left:8%; margin-right:8%; width:84%;}
+.emax7 h4 { padding-bottom:10px; border-bottom:5px solid #7c6038; width:100%;}
+.emax7 h4 span{ font-family:'Heiti SC Medium'; font-size:14px; line-height:17px; color:#7C6137; font-weight:normal;}
+.emax7 h4  em img{ vertical-align:bottom; margin-right:13px;}
+.emax7 .max_ul{ overflow:hidden; margin-top:44px; width:100%;}
+.emax7 .max_ul  h5{ margin-top:34px;}
+.emax7 .max_ul  li{ margin-right:0px; float:left; margin-bottom:0px;  padding:33px 2.9% 34px 3.3%; width:18%; height:300px; border: 4px solid #fff;}
+.emax7 .max_ul  li:hover{ border:4px solid #d3d3d3}
+.emax7 .max_ul .last{ margin-right:0px !important;}
+.emax7 .max_ul  li  a >img{  max-width:100%!important; height:auto;  }
+.emax7 .max_ul  li .name{ position: absolute;margin-top: 30px; font-size:28px; color:#7C6137; font-weight:bold; text-indent: 48px;}
+.emax7 .max_ul  li .name  em{ font-size:18px;margin-left:3px;}
+.canshu em img{ margin-right:5px; vertical-align:bottom}
+.canshu i{   top: 3px;position: relative;margin-right:5px; font-family:'Heiti SC Medium'; font-size:12px; font-weight:bold; }
+.emax7 .max_ul  li .jieshao{ font-size:12px;width:200px;font-family:'Heiti SC Medium'; line-height:17px; margin-bottom:15px; color:#666666; }
+.emax7 .max_ul  li .xiangqing{ color:#919191; font-size:12px;font-family:'Heiti SC Medium';  margin-left: 17px;}
+.emax7 .max_ul  li .xiangqing  img{ vertical-align:middle; margin-left:10px;}
+.canshu{ margin:85px 22px 15px;width:200px;}
+
+.emax7  .gbs{ font-size:24px; line-height:29px;font-family:'Heiti SC Medium'; color:#666; margin-top:44px; padding-bottom:5px; border-bottom:1px dashed #8d8d8d;}
+
+.guishi{ overflow:hidden; width:105%; margin-top:44px;}
+.guishi  li .pic{padding-left:1%;}
+.guishi  li{ width:29%; float:left; margin-bottom:70px; min-height:298px; margin-right: 46px;}
+.guishi  li  .buju{width:100%;display:block; min-height:248px; padding:35px 0%  15px; border:4px solid #fff;}
+.guishi  li  .buju:hover{border:4px solid #d3d3d3; }
+
+.guishi  li  .pic{ margin-right:10px;}
+.guishi  li  .text{width:60%; padding-top:1%;}
+.guishi  li  .text .name{  font-size:28px; color:#7C6137; font-weight:bold; }
+.guishi  li  .text .name em{font-size:18px;margin-left:3px; }
+.guishi  li  .text .jieshao{ font-size:12px;width:100%; line-height:17px; margin-bottom:15px; color:#666666; }
+.guishi  li  .text .jieshaos{ font-size:12px;width:100%;text-align:right;font-family:'Heiti SC Medium'; line-height:17px; margin-bottom:15px; color:#666666; }
+.guishi  li  .xiangqing{ color:#919191; font-size:14px;font-family:'Heiti SC Medium'; }
+.guishi  li  .xiangqing  img{ vertical-align:middle; margin-left:10px;}
+.canshu_guishi{ margin:15px 0px 15px;}
+.canshu_guishi em img{ margin-right:5px; vertical-align:bottom}
+.canshu_guishi i{   top: 3px;position: relative;margin-right:5px; font-family:'Heiti SC Medium'; font-size:14px; font-weight:bold; }
+
+	/*产品详细*/
+ .jxs{width:100%; height:502px; background:#c8ecfc;}
+  .jxs .tab { width:50%;overflow:hidden;}
+  .jxs .tab_menu { clear:both;width:100%;}
+  .jxs  .tab_menu  ul{ width:100px; margin:0 auto;}
+  .jxs .tab_menu li { float:left; text-align:center; cursor:pointer; list-style:none; padding:1px 6px; margin-right:4px; background:#F1F1F1; border:1px solid #898989; border-bottom:none;}
+ .jxs  .tab_menu li.selected { color:#FFF; background:#6D84B4;}
+ .jxs .tab_box { clear:both; height:auto;}
+ .jxs .tab_box >div img{max-width:100%;}
+.jxs .hide{display:none}
+
+/*柜式*/
+.tabc{ height:100%; position:relative; width:100%;}
+.tab_boxc{  float:left; margin-left:22.8%; margin-top:4.7%; width:27%; height:95%;}
+.tab_boxc  div  img{max-width:100%!important;height:98%;}
+.tab_menuc{width: 42%;float: right;margin-left:8%; margin-top:27%;}
+.tab_menuc li.hover { background:#DFDFDF;}
+.tab_menuc  ul li{ background: none;float:left;  font-size:14px; width:auto; margin-right:24px;cursor: pointer;}
+.jxss h3 img{ vertical-align:top; margin-right:10px; }
+.jxss h3{ position:absolute; top:38%;  font-size:24px;font-family:'Heiti SC Medium'; }
+.tab_menuc .a1{ width:12px; height:12px; display:inline-block; background:#d1d1d1; margin-right:8px;   }
+.tab_menuc .a2{ width:12px; height:12px; display:inline-block; background:#bda16a; margin-right:8px; }
+.tab_menuc .a3{ width:12px; height:12px; display:inline-block; background:#666666; margin-right:8px;  }
+.tab_menuc .a4{ width:12px; height:12px; display:inline-block; background:#666666; margin-right:8px;  }
+.section-content{ position:relative;}
+.section-content .tp{ width:12.5%; height:auto;}
+.bg_cons{position:absolute:top:0px; left:0px; width:100%;height:100%;}
+.section-content .tp .section-function-pic1{ position:absolute; top:14%; left:24.3%; width:12.5%;}
+.gj_box{height:95%;}
+.gj_title{top: 10px;position: relative;}
+.gj_swj{width:250%;margin-left:-130px;}
+.span1  em{font-size:12px;}
+
+
+/*面包屑*/
+.MianBaoXue{ width:100%;height:50px;position:relative;z-index:50;}
+.MianBaoXue span{color:#666;font-size:14px; display:block; float:left; padding-top:15px; margin-left:12px;font-family:'Heiti SC Medium'}
+.MianBaoXue span a{ color:#666;font-family:'Heiti SC Medium'}
+
+.emax7 .xiaoguo{ width:200px; height:60px;margin-bottom:15px;margin-left: 33px;}
+.emax7 .xiaoguo li{ padding:0px;width:200px;height:20px;border:none;font-size: 12px;
+	list-style:disc;color: #666666;}
+.emax7 .xiaoguo li:hover{border:none;}
+
+.desc-title i{ width:55px; display:inline-block	;}
+.desc-title i img{ width:90%; }
+
+
+.emax7_name{font-style:italic;}
+.emax7_name:hover {}
+.emax7_name u {text-decoration: none; font-style: normal;}

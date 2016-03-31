@@ -1,0 +1,147 @@
+﻿@charset "utf-8";
+
+/*==========@@HTML默认 开始@@==========*/
+
+/*基本*/
+	 
+*{padding:0px; margin:0px }
+i,em{ font-style:normal;}
+@font-face {
+font-family: 'HelveticaNeueMed 微软雅黑';
+src: url('../font/HelveticaNeueMed.ttf');}
+@font-face {
+    font-family: 'AdobeSongStd-Light 微软雅黑';
+    src: url('../font/AdobeSongStd-Light.otf');}
+
+
+*{margin:0; padding:0;}
+div{ margin:0; padding:0; border:0; color:#333333; }
+body{color:#000;background-color: #FFF;padding:0px; margin:0px auto;overflow:scroll;overflow-x:hidden;overflow-y:auto;
+font-family:'Heiti SC Medium','黑体',Microsoft YaHei,Helvitica,Verdana,Tohoma,Arial,san-serif;font-size:12px;}
+img{ margin:0; padding:0; border:0; }
+
+b,strong {font-weight: bold;}
+
+table { border-collapse: collapse; border-spacing: 0;/* Remove most spacing between table cells.*/}
+
+li{ list-style: none outside none;}
+
+/*链接*/
+
+a{ text-decoration:none; color:#000; background: transparent;  outline:none}
+
+a:visited {}
+
+a:focus { outline:none; }
+
+a:hover, a:active{ color:#0080BC; outline:none;}
+
+.a01{ text-decoration:none; color:#919191; background: transparent;  outline:none}
+
+.a01:visited {}
+
+.a01:focus { outline:none; }
+
+.a01:hover, a:active{ color:#0080BC; outline:none;}
+
+
+
+/*标题*/
+
+h1 { font-size: 1.3em;margin:  0;}
+
+h2 {font-size: 1.2em;}
+
+
+
+/*表单*/
+
+form {margin: 0;}
+
+button,input,select,textarea {
+
+    font-size: 100%;  /* Correct font size not being inherited in all browsers. */
+
+    margin: 0;  /* Address margins set differently in IE 6/7, Firefox 3+, Safari 5,and Chrome */
+
+    vertical-align: baseline; /* Improve appearance and consistency in all browsers */
+
+    *vertical-align: middle; /* Improve appearance and consistency in all browsers */
+
+}
+
+button,select {text-transform: none;}
+
+/*==========@@HTML默认  结束@@==========*/
+
+
+
+
+
+/*==========@@通用 开始@@==========*/
+
+/*常用颜色*/
+
+.blue {color: #00F !important;}
+
+.green {color: #0F0 !important;}
+
+.red {color: #F00 !important;}
+
+.black {color: #000000 !important;}
+
+.white {color: #FFFFFF !important;}
+
+.gray { color:gray; !important; }
+
+.purple { color:purple;  !important;}
+
+
+
+/*清除浮动*/
+
+.clear { display:block; clear:both;}
+
+.fl { float:left; }
+
+.fr { float:right; }
+
+
+
+/*对齐方式*/
+
+.left { text-align: left}
+
+.right {text-align: right}
+
+.center{ text-align: center}
+
+
+
+/*其它*/
+
+.hide { display:none; }  /*隐藏*/
+
+.more{ float: right; padding-right:5px;} /*more链接*/
+
+.code_image{ cursor: pointer; padding-bottom:3px;} /*验证码图片样式*/
+
+
+
+/*必须输入，主要*/
+
+.required{ color:red; font-weight:bold;}
+
+.form_text_verifycode { width:80px; }
+
+.form_radio{ width:auto; border:0;}
+
+.form_checkbox{ width:auto; border:0}
+
+
+
+
+
+/*==========@@通用 结束@@==========*/
+
+/*==========@@通用列表 结束@@==========*/

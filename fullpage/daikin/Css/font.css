@@ -1,0 +1,13 @@
+﻿@charset "utf-8";
+
+/*==========@@HTML默认 开始@@==========*/
+	 
+*{padding:0px; margin:0px }
+i,em{ font-style:normal;}
+
+@font-face {
+font-family: 'HelveticaNeueMed';
+src: url('../font/HelveticaNeueMed.ttf');}
+@font-face {
+    font-family: 'AdobeSongStd-Light';
+    src: url('../font/AdobeSongStd-Light.otf');}
