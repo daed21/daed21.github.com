@@ -7,23 +7,28 @@
 <title>幻灯触屏左右滚动</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <style type="text/css">
-html,body {background:#f2f1f1;font-family:"Microsoft YaHei","Helvetica","Heiti SC","Droid Sans",sans-serif;font-size:13px;overflow-y:hidden;}
+html,body {min-width:300px;background:#f2f1f1;font-family:"Microsoft YaHei","Helvetica","Heiti SC","Droid Sans",sans-serif;font-size:13px;overflow-y:hidden;}
 ul,li{ margin:0; padding:0; list-style:none;}
 a,a:focus,input {outline:none;outline-style:none;}
 ol,ul {list-style: none;}
 table {border-collapse:collapse;border-spacing:0;}
 a img {border: none;}
 ins,a:link,a:visited,a:hover,a:active {text-decoration: none;color: #000;}
-.wrap_block {width:100%; margin:0 auto;position:relative;overflow:hidden;}
+.wrap_block {width:100%; margin:0 auto; position:relative;overflow:hidden;}
 .swiper-container {margin:0 auto;position:relative;overflow:hidden; }
 .swiper-wrapper {overflow:hidden;}
 .swiper-slide {float:left;width:100%; margin:0 auto; padding-left:0px;margin:0;position:relative;overflow:hidden;}
 .swiper-slide img {width:100%;display:inline;}
 .paginationkv { position:absolute; bottom:14px;left:0;  text-align: center;   width: 100%;margin:0px auto;}
-.swiper-pagination-switch { display: inline-block;  width: 30px;  height: 30px;
-  border-radius:10px;  background:rgba(255,255,255,0.6); border:1px solid #fff;
+.swiper-pagination-switch { display:inline-block;width:12px;  height:12px;
+  border-radius:50px;  background:rgba(255,255,255,0.6); border:1px solid #fff;
   margin: 0 4px;  cursor: pointer;}
 .swiper-active-switch { background: #f25f4f;border:1px solid #f25f4f;}
+
+.pro-ctrl .ad-left {background: url(images/arrows.png) no-repeat left top; z-index:9;
+  position: absolute; left:10px;top:48%;width:17px;  height:30px;}
+.pro-ctrl .ad-right {background: url(images/arrows.png) no-repeat left bottom;z-index:9;
+  position: absolute; right: 10px;top:48%;width:17px;  height:30px;}
 </style>
 </head>
 <body>
@@ -31,24 +36,56 @@ ins,a:link,a:visited,a:hover,a:active {text-decoration: none;color: #000;}
     <div class="swiper-container">
       <ul class="swiper-wrapper">
         <li class="swiper-slide"><img src="images/3688.jpg" alt="" /></li>
-        <li class="swiper-slide"><img src="images/3689.jpg" alt="" /></li>
+<!--         <li class="swiper-slide"><img src="images/3689.jpg" alt="" /></li> -->
       </ul>
     </div>
         <div class="paginationkv"></div>
+    <div class="pro-ctrl">
+    <a class="ad-left" href="javascript:;"></a>
+    <a class="ad-right" href="javascript:;"></a>
+    </div>
   </div>
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script>
 $(function(){
-var myPro = new Swiper('.swiper-container',{pagination: '.paginationkv',
-    loop:true,autoplay:4000,grabCursor: true,autoplayDisableOnInteraction:false,paginationClickable: true});
+/*var myPro = new Swiper('.swiper-container',{pagination: '.paginationkv',
+    loop:true,autoplay:4000,grabCursor: true,autoplayDisableOnInteraction:false,paginationClickable: true});*/
+var resizeBigPrice = function(){
+  var topimg = $(".swiper-container .swiper-wrapper .swiper-slide").length;
+  if(topimg <= 1 ){
+    $(".wrap_block .paginationkv,.wrap_block .pro-ctrl").css("display","none");
+    }
+  if(topimg >=2 ){
+    var myPro = new Swiper('.swiper-container',{
+      pagination: '.paginationkv',
+      loop:true,
+      autoplay:4000,
+      grabCursor: true,
+      paginationClickable: true
+    });
+
+    $('.ad-left').on('click', function(e){
+      e.preventDefault()
+      myPro.swipePrev()
+    });
+    $('.ad-right').on('click', function(e){
+      e.preventDefault()
+      myPro.swipeNext()
+    }); //lucky
+  }
+};
+resizeBigPrice();
+
     fn=window.onload=window.onresize=function(){
-    	var kvw = document.body.clientWidth;var kvh = kvw/(16/9);
-    $(".wrap_block,.swiper-wrapper,.swiper-slide,.swiper-slide img").height(kvh);}
+      var kvw = document.body.clientWidth;var kvh = kvw/(16/9);
+    $(".wrap_block,.swiper-wrapper,.swiper-slide,.swiper-slide img").height(kvh);
+    }
+
    if(typeof window.onload == 'function'){
-	oldonload=window.onload;
-	window.onload=function(){fn();oldonload();}
+  oldonload=window.onload;
+  window.onload=function(){fn();oldonload();}
    }
 });
 </script>
