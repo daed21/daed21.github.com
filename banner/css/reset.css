@@ -1,0 +1,12 @@
+@charset "utf-8";
+body{padding:0;margin:0;background:#fff;font-family:"微软雅黑", "Microsoft YaHei",Helvetica, Arial, sans-serif;}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, p, blockquote, th, td, li, img, input,figure{margin:0;padding:0;border:0}
+ul, li{list-style: none outside none;margin: 0;padding: 0;}
+img{vertical-align: middle;border:none;}
+.clearFix:after{clear:both;content:".";display: block;height: 0;visibility: hidden;}
+.clearFix{*display:inline-block;}
+.clear{clear: both;padding: 0;margin: 0;}
+textarea{resize:none}
+a{text-decoration: none;outline: 0;}
+a {color: #337ab7;text-decoration: none;}
+a:hover{color:#23527c}
