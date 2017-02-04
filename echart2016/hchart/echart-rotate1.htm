@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <script src="echarts.simple.min.js"></script> 
+   </head>
+   <body style="height: 100%; margin: 0">
+  <div id="mychart-rotate" style="width:500px;height:400px;"></div>
+
+       <script type="text/javascript">
+var dom = document.getElementById("mychart-rotate");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    color: ['#f14f4d', '#fd8435', '#ffd200', '#81c057', '#01a5ed', '#916abb'],
+    title : {
+        text: '某站点用户访问来源',
+        subtext: '纯属虚构',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+
+        orient: 'vertical',
+        right: '50px',
+        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','广告联盟']
+    },
+
+    series : [
+        {
+            name: '访问来源',
+            type: 'pie',
+
+        selectedMode: 'single',
+        selectedOffset: 20,
+        clockwise: true,
+
+            radius : '50%',
+            center: ['50%', '50%'],
+            data:[
+                {value:135, name:'直接访问1'},
+                {value:310, name:'邮件营销2'},
+                {value:234, name:'联盟广告3'},
+                {value:135, name:'视频广告4'},
+                {value:154, name:'搜索引擎5'},
+                {value:108, name:'广告联盟广告联盟'},
+                {value:335, name:'直接访问7'},
+                {value:310, name:'邮件营销8'},
+                {value:234, name:'联盟广告9'},
+                {value:135, name:'视频广告0'},
+                {value:158, name:'搜索引擎1'},
+                {value:148, name:'广告联盟2广告联盟2'},
+                {value:235, name:'直接访问直接访问直接访问3'},
+                {value:110, name:'邮件营销4'},
+                {value:234, name:'联盟广告5'},
+                {value:135, name:'视频广告6'},
+                {value:154, name:'搜索引擎7'},
+                {value:108, name:'广告联盟8'},
+                {value:335, name:'直接访问9'},
+                {value:210, name:'邮件营销0'},
+                {value:234, name:'联盟广告1'},
+                {value:135, name:'视频广告2'},
+                {value:154, name:'搜索引擎3'},
+                {value:248, name:'广告联盟4'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.simple.min.js"></script>
+</header>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="mychart1" style="width:900px;height:400px;"></div>
+     <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('mychart1'));
+        // 指定图表的配置项和数据
+        var option = {
+        	color: ['#81c057'],
+            title: {text: 'ECharts'},
+              tooltip : {trigger: 'item'},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+           
+            series: [{
+                name: '销量',
+                type: 'bar',
+                barWidth: '60%',
+                data: [
+                       {value:40,itemStyle:{normal:{color:'#f14f4d',label:{show: true,formatter:'{a}'}} }},
+                       {value:10,itemStyle:{normal:{color:'#fd8435',label:{show: true,formatter:'{c}'}} }},
+                       {value:20,itemStyle:{normal:{color:'#ffd200',label:{show: true,formatter:'{c}'}} }},
+                       {value:30,itemStyle:{normal:{color:'#81c057',label:{show: true,formatter:'{c}'}} }},
+                       {value:6, itemStyle:{normal:{color:'#01a5ed',label:{show: true,formatter:'{c}'}} }},
+                       {value:26,itemStyle:{normal:{color:'#916abb',label:{show: true,formatter:'{c}'}} }}
+                ]
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

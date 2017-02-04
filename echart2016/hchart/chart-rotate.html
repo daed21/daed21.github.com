@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script src="jquery-1.11.3.min.js">
+</script>
+<script src="highcharts.js"></script>
+
+</head>
+
+<body>
+
+<div id="container" style="min-width:400px;height:400px;"></div>
+
+<script>
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'pie'
+        },
+        colors: ['#f14f4d', '#fd8435', '#ffd200', '#81c057', '#01a5ed', '#916abb'],
+        series: [{
+            data: [200.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4]
+        }]
+    });
+});
+</script>
+</body>
+</html>
