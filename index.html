@@ -1,109 +1,266 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>2016红猫拆红包抽奖</title>
-<style type="text/css">
-*{	margin:0;
-	padding:0;
-	list-style: none;
-	border: 0;
-}
-@-webkit-keyframes shake {
-	0% {-webkit-transform: rotate(2deg) translate3d(0,0,0)	}
-	50% {-webkit-transform: rotate(-2deg) translate3d(0,0,0)}
-	100% {-webkit-transform: rotate(2deg) translate3d(0,0,0)}
-}
-@-moz-keyframes shake {
-	0% {transform: rotate(2deg) translate3d(0,0,0)	}
-	50% {transform: rotate(-2deg) translate3d(0,0,0)	}
-	100% {transform: rotate(2deg) translate3d(0,0,0)	}
-}
-@-ms-keyframes shake {
-	0% {transform: rotate(2deg) translate3d(0,0,0)	}
-	50% {transform: rotate(-2deg) translate3d(0,0,0)	}
-	100% {transform: rotate(2deg) translate3d(0,0,0)	}
-}
-.red{width:300px;height:345px;border-radius:15px;box-shadow:1px 1px 20px #666;
-	position:fixed;top:50%;left: 50%;overflow: hidden;margin-left: -150px;
-	margin-top: -172px;
-	transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%;}
-.red img{width:100%;height: auto;}
-.red.shake{animation:shake .2s infinite linear;
-	-webkit-animation:shake .2s infinite linear;}
-.windows{width: 300px;height: 200px;position: absolute;
-	top: 50%;	margin-top: -100px;	left: 50%;
-	margin-left: -150px;border-radius: 15px;
-	background: #c7c7c7;display: none;z-index: 11;}
-.text{text-align: center;font-size: 18px;font-family: "微软雅黑";vertical-align:middle; 
-	padding-top:60px;}
-.close{
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	right: -10px;
-	top: -10px;
-	background: #c7c7c7;
-	border-radius: 50%;
-	cursor: pointer;
-	text-align: center;
-	transition:all 0.5s linear;
-	-webkit-transition:all 0.5s linear;
-	-moz-transition:all 0.5s linear;
-	-ms-transition:all 0.5s linear;
-	-o-transition:all 0.5s linear;
-}
-.close:hover{
-	transform:rotate(180deg);
-	-webkit-transform:rotate(180deg);
-	-moz-transform:rotate(180deg);
-	-ms-transform:rotate(180deg);
-	-o-transform:rotate(180deg);
-}
-.close img{
-	padding-top: 5px;
 
-}
-.opacity{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom:0;
-	background: #000;
-	opacity:0.5;
-	filter:alpha(opacity=50);
-	z-index: 10;
-	width: 100%;
-	height: 100%;
-	display: none;
-}
-</style>
-<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	var cred=1;
-	$(".red").click(function(){
-		if(cred){cred=0; console.log(cred);
-		        $(this).addClass("shake"); var mrnum = parseInt(Math.floor(Math.random()*1000))+1000;
-	        	setTimeout(reds,mrnum);console.log(mrnum); }
-	});
-function reds(){
-			$(".red").removeClass("shake");
-			$(".windows,.opacity").fadeIn();
-		}
-	$(".close").click(function(){$(this).parent().fadeOut();$(".opacity").fadeOut();cred=1;console.log(cred);});
-});
-</script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>馨运公寓-我爱我家2017</title>
+    <link rel="stylesheet" href="green/Css/reset.css">
+    <link href="green/Css/swiper.min.css" rel="stylesheet">
+    <link href="green/Css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="green/Css/main.css" />
 </head>
+
 <body>
-<div class="opacity"></div>
-<div class="red"><img src="images/asd23.png"></div>
-<div class="windows">
-	<div class="text">2016祝您节日愉快！</div>
-	<div class="close"><img src="images/close.png"/></div>
+    <!-- LOADING -->
+    <div class="load-container load3">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
 </div>
+    <!-- loading end -->
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide p1">
+              <img class="arrowR arrowsA" src="green/Picture/arrow.png"/>
+                <div class="p1-content">
+                    <img src="green/Picture/p1.png" class="p1-pic1 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.6s" alt="">
+                    <img src="green/Picture/p2.png" class="p1-pic2 ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.6s" alt="">
+                </div>
+                <div class="p1-content green-bg">
+                    <img src="green/Picture/p4.png" class="p1-pic4 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.6s" alt="">
+                </div>
+                <div class="p1-content">
+                    <img src="green/Picture/p3.png" class="p1-pic3 ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.6s" alt="">
+                    <div class="p1-pic5-bg">
+                        <img src="green/Picture/p5.png" class="p1-pic5 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.6s" alt="">
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-slide p2 ">
+                  <img class="arrowR arrowsA" src="green/Picture/arrow.png"/>
+                <div class="p2-content">
+                    <img src="green/Picture/pic1.png" class="p2-pic1 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.6s" alt="">
+                    <img src="green/Picture/pic2.png" class="p2-pic2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s" alt="">
+                    <img src="green/Picture/pic3.png" class="p2-pic3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" alt="">
+                    <img src="green/Picture/pic4.png" class="p2-pic4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" alt="">
+                    <img src="green/Picture/pic5.png" class="p2-pic5 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s" alt="">
+                    <img src="green/Picture/pic6.png" class="p2-pic6 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s" alt="">
+                    <img src="green/Picture/pic7.png" class="p2-pic7 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide p3" data-hash="current">
+                <img class="arrowR arrowsA" src="green/Picture/arrow.png"/>
+                <div class="p3-content">
+                    <img src="green/Picture/pic1.png" class="p3-pic1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" alt="">
+                    <img src="green/Picture/pic2.png" class="p3-pic2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"  alt="">
+                    <img src="green/Picture/pic3.png" class="p3-pic3 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"  alt="">
+                    <img src="green/Picture/pic4.png" class="p3-pic4 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"  alt="">
+                </div>
+            </div>
+            <div class="swiper-slide p4">
+                <img class="arrowR arrowsA" src="green/Picture/arrow.png"/>
+                <div class="p4-content">
+                    <img src="green/Picture/top.jpg" class="p4-top ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" a alt="">
+                    <img src="green/Picture/line.png" class="p4-line ani" alt="">
+                    <img src="green/Picture/pic1.png" class="p4-pic1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" alt="">
+                    <img src="green/Picture/pic2.png" class="p4-pic2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s" alt="">
+                    <img src="green/Picture/pic3.png" class="p4-pic3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s" alt="">
+                    <img src="green/Picture/pic4.png" class="p4-pic4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s" alt="">
+                    <img src="green/Picture/pic5.png" class="p4-pic5 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s" alt="">
+                    <img src="green/Picture/pic6.png" class="p4-pic6 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" alt="">
+                    <img src="green/Picture/pic7.png" class="p4-pic7 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" alt="">
+                    <img src="green/Picture/bottom.jpg" class="p4-bottom" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide p5">
+                <img class="arrowR arrowsA" src="green/Picture/arrow.png"/>
+                <div class="p5-content">
+                    <img src="green/Picture/pic1.png" class="p5-pic1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"  alt="">
+                    <img src="green/Picture/pic2.png" class="p5-pic2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" alt="">
+                    <img src="green/Picture/pic3.png" class="p5-pic3 ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide p6">
+    <img class="arrowR arrowsA" src="green/Picture/arrow.png" />
+    <div class="room-content">
+        <a href=" http://yun.kujiale.com/design/3FO4IXV7EC47/show?from=singlemessage">
+            <div class="p6-pic1 room-pic swiper-lazy roomtop" date-background="green/Images/pic1.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯四户01室方案1</span></p>
+                </div>
+            </div>
+        </a>
+
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IW8BXE6O/show">
+            <div class="p6-pic2 room-pic swiper-lazy" date-background="green/Images/pic2.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯四户01室方案2</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IWIKAP1Q/show">
+            <div class="p6-pic3 room-pic swiper-lazy" date-background="green/Images/pic3.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯四户02,03室方案1</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IW8BW2DA/show">
+            <div class="p6-pic4 room-pic swiper-lazy" date-background="green/Images/pic4.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯四户02,03室方案2</span></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="swiper-slide p7">
+    <img class="arrowR arrowsA" src="green/Picture/arrow.png" />
+    <div class="room-content">
+        <a href="http://yun.kujiale.com/design/3FO4IY26VFP1/show">
+            <div class="p7-pic1 room-pic swiper-lazy roomtop" date-background="green/Images/pic5.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯四户04室方案1</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IWH9AUSA/show">
+            <div class="p7-pic2 room-pic swiper-lazy" date-background="green/Images/pic6.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯四户04室方案2</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IWFKODQQ/show">
+            <div class="p7-pic3 room-pic swiper-lazy" date-background="green/Images/pic7.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户01室方案1</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IWFRWWUK/show">
+            <div class="p7-pic4 room-pic swiper-lazy" date-background="green/Images/pic8.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户01室方案2</span></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="swiper-slide p8">
+    <img class="arrowR arrowsA" src="green/Picture/arrow.png" />
+    <div class="room-content">
+        <a href=" http://yun.kujiale.com/design/3FO4IWH3XSVC/show">
+            <div class="p8-pic1 room-pic swiper-lazy roomtop" date-background="green/Images/pic9.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户02，03室方案1</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IW8BV3X0/show">
+            <div class="p8-pic2 room-pic swiper-lazy" date-background="green/Images/pic10.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户02,03室方案2</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href=" http://yun.kujiale.com/design/3FO4IW8BVO06/show">
+            <div class="p8-pic3 room-pic swiper-lazy" date-background="green/Images/pic11.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户04室方案1</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IW8BVHB4/show">
+            <div class="p8-pic4 room-pic swiper-lazy" date-background="green/Images/pic12.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户04室方案2</span></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="swiper-slide p9">
+    <div class="room-content">
+        <a href="http://yun.kujiale.com/design/3FO4IW8BUPJV/show">
+            <div class="p9-pic1 room-pic swiper-lazy roomtop" date-background="green/Images/pic13.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户05室方案1</span></p>
+                </div>
+            </div>
+        </a>
+        <div class="white-line"></div>
+        <a href="http://yun.kujiale.com/design/3FO4IY26TPII/show">
+            <div class="p9-pic2 room-pic swiper-lazy" date-background="green/Images/pic14.jpg">
+                <div class="shandow">
+                    <p><span class="roomtext-left">馨运小区</span><span class="roomtext-right">一梯五户05室方案2</span></p>
+                </div>
+            </div>
+        </a>
+                    <div class="logo">
+                      <img src="green/Picture/logo.jpg" id="logo" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="green/Scripts/jquery.min.js"></script>
+    <script src="green/Scripts/swiper.min.js"></script>
+    <script src="green/Scripts/swiper.animate1.0.2.min.js"></script>
+
+    <!--  swiper 配置-->
+    <script type="text/javascript">
+
+    window.onload = function () {
+
+        $('.load-container').fadeOut();
+
+    };
+
+
+
+
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: false,
+            autoplay: false,
+            direction: 'vertical',
+            // hashnav: true,
+            lazyLoading : true,
+            onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+                swiperAnimateCache(swiper); //隐藏动画元素
+                swiperAnimate(swiper); //初始化完成开始动画
+            },
+            onSlideChangeEnd: function(swiper) {
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            }
+
+
+        });
+    </script>
+
 </body>
+
 </html>

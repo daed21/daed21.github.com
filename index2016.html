@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>2016红猫拆红包抽奖</title>
+<style type="text/css">
+*{	margin:0;
+	padding:0;
+	list-style: none;
+	border: 0;
+}
+@-webkit-keyframes shake {
+	0% {-webkit-transform: rotate(2deg) translate3d(0,0,0)	}
+	50% {-webkit-transform: rotate(-2deg) translate3d(0,0,0)}
+	100% {-webkit-transform: rotate(2deg) translate3d(0,0,0)}
+}
+@-moz-keyframes shake {
+	0% {transform: rotate(2deg) translate3d(0,0,0)	}
+	50% {transform: rotate(-2deg) translate3d(0,0,0)	}
+	100% {transform: rotate(2deg) translate3d(0,0,0)	}
+}
+@-ms-keyframes shake {
+	0% {transform: rotate(2deg) translate3d(0,0,0)	}
+	50% {transform: rotate(-2deg) translate3d(0,0,0)	}
+	100% {transform: rotate(2deg) translate3d(0,0,0)	}
+}
+.red{width:300px;height:345px;border-radius:15px;box-shadow:1px 1px 20px #666;
+	position:fixed;top:50%;left: 50%;overflow: hidden;margin-left: -150px;
+	margin-top: -172px;
+	transform-origin: 50% 100%;
+	-webkit-transform-origin: 50% 100%;}
+.red img{width:100%;height: auto;}
+.red.shake{animation:shake .2s infinite linear;
+	-webkit-animation:shake .2s infinite linear;}
+.windows{width: 300px;height: 200px;position: absolute;
+	top: 50%;	margin-top: -100px;	left: 50%;
+	margin-left: -150px;border-radius: 15px;
+	background: #c7c7c7;display: none;z-index: 11;}
+.text{text-align: center;font-size: 18px;font-family: "微软雅黑";vertical-align:middle; 
+	padding-top:60px;}
+.close{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	background: #c7c7c7;
+	border-radius: 50%;
+	cursor: pointer;
+	text-align: center;
+	transition:all 0.5s linear;
+	-webkit-transition:all 0.5s linear;
+	-moz-transition:all 0.5s linear;
+	-ms-transition:all 0.5s linear;
+	-o-transition:all 0.5s linear;
+}
+.close:hover{
+	transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+}
+.close img{
+	padding-top: 5px;
+
+}
+.opacity{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom:0;
+	background: #000;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var cred=1;
+	$(".red").click(function(){
+		if(cred){cred=0; console.log(cred);
+		        $(this).addClass("shake"); var mrnum = parseInt(Math.floor(Math.random()*1000))+1000;
+	        	setTimeout(reds,mrnum);console.log(mrnum); }
+	});
+function reds(){
+			$(".red").removeClass("shake");
+			$(".windows,.opacity").fadeIn();
+		}
+	$(".close").click(function(){$(this).parent().fadeOut();$(".opacity").fadeOut();cred=1;console.log(cred);});
+});
+</script>
+</head>
+<body>
+<div class="opacity"></div>
+<div class="red"><img src="images/asd23.png"></div>
+<div class="windows">
+	<div class="text">2016祝您节日愉快！</div>
+	<div class="close"><img src="images/close.png"/></div>
+</div>
+</body>
+</html>
