@@ -1087,35 +1087,32 @@ input[type="color"]:focus,
   background-size: cover;
   padding: 260px 0; }
 
-.typed-cursor {
-  opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
-  -moz-animation: blink 0.7s infinite;
-  animation: blink 0.7s infinite;
-  /*color: #4f82e9; */
+.typed-cursor:after {
+    content: "";
+    width: 6px;
+    height: 50px;
+    vertical-align: -8px;
+    margin-left: 5px;
+    background-color: #fff;
+    display: inline-block;
+  -webkit-animation: blink .4s infinite alternate;
+  -moz-animation: blink .4s infinite alternate;
+  animation: blink .4s infinite alternate;
 }
 
+
 @keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  0% {opacity:0}to{opacity:1}
+}
+
 @-webkit-keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  0% {opacity:0}to{opacity:1}
+}
+
 @-moz-keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  0% {opacity:0}to{opacity:1}
+}
+
 .parallax-buttons {
   display: block;
   text-align: center;
