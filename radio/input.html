@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery插件cookie插件学习</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no"/>
+<script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="jquery.cookie.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="main.css?v=20160727">
+<script type="text/javascript">
+$(function () {
+    var msg = $.cookie('msg');
+　　if(msg != null && msg != undefined && msg != 'undefined'){
+        $("#msg").val(msg);
+　　}
+    $("#sure").click(function () {
+        var msg = $.trim($('#msg').val());
+        $.cookie("msg", msg, {expires: 7,path:"/"});
+            });
+
+
+
+    var oid = $.cookie('oid');   //alert(oid); 
+    //[{"qid":"1","oid":3},{"qid":"2","oid":3},{"qid":"3","oid":4},{"qid":"4","oid":3}]
+    $(".anslist").html(oid);
+    var ss = JSON.parse(oid);
+　　//if(oid != null && oid != undefined && oid != 'undefined'){
+
+    $.each(ss,function(k,v){
+    //console.log(k+" "+v.qid+"&"+v.oid); //alert($(".dp_info").eq(k).data('qid'));
+    if($(".dp_info").eq(k).data('qid')==v.qid){
+        var vid = v.oid -1;
+     $(".dp_info").eq(k).find('li').eq(vid).find('input').attr("checked","checked");
+    
+     $(".dp_info").eq(k).find('li').eq(vid).addClass("dactive").siblings().removeClass("dactive");
+     }
+    });
+
+/*        $(".dp_sel").find('li').eq(oid).find('input').attr("checked","checked");
+        $(".dp_sel").find('li').eq(oid).addClass("dactive").siblings().removeClass("dactive");*/
+
+　　//}
+     $(".dp_sel li").click(function(){
+        $(this).addClass("dactive").siblings().removeClass("dactive");
+        findx();
+      });
+        function findx(){ //alert("666Tim");
+            var anslist = []; //数组
+                //console.log(oid);
+            var tnode = $('.dp_info').length;
+            for(var i=0;i<tnode;i++){
+                var temp = {}; //[{"qid":1,"oid":1},{"qid":2,"oid":2},{"qid":3,"oid":3}]
+                
+                var qid = $('.dp_info').eq(i).attr("data-qid");
+
+                var oid = "";
+                    oid = $(".dp_info").eq(i).find('li').index($('.dactive').eq(i));
+
+                temp.qid = qid;
+                temp.oid = oid+1;
+                anslist.push(temp); 
+                //qid++;oid++
+            }
+           // alert(JSON.stringify(anslist));
+        //console.log(JSON.stringify(anslist)); 
+        var alist =JSON.stringify(anslist);
+
+//console.log(JSON.parse(alist));
+
+        $(".anslist").html(alist);
+        $.cookie("oid", alist, {expires: 7,path:"/"});
+        //console.log(alist.split(","));
+        //$(".dp_sel").find('li').eq(oid).find('input').attr("checked","checked");
+        //console.log(oid);
+        }
+
+
+
+});
+</script>
+</head>
+<body>
+    <p>
+        信息记录：<input type="text" id="msg"  value="" />  <input type="button" value="记住当前信息" id="sure" />
+   </p>
+<div class="dp_info" data-qid="1">
+    111
+<div class="dp_sel">
+    <ul>
+        <li class="dactive"><input class="radio" type="radio" name="dati_1" id="dati_a1" ><label class="radio" for="dati_a1"><em>A.</em><span>题目a</span></label></li>
+        <li><input class="radio" type="radio" name="dati_1" id="dati_b1" ><label class="radio" for="dati_b1"><em>B.</em><span>题目b</span></label></li>
+        <li><input class="radio" type="radio" name="dati_1" id="dati_c1" ><label class="radio" for="dati_c1"><em>C.</em><span>题目c</span></label></li>
+        <li><input class="radio" type="radio" name="dati_1" id="dati_d1" ><label class="radio" for="dati_d1"><em>D.</em><span>题目d</span></label></li>
+    </ul>
+</div>
+</div>
+
+<div class="dp_info" data-qid="2">
+    222
+<div class="dp_sel">
+    <ul>
+        <li class="dactive"><input class="radio" type="radio" name="dati_2" id="dati_a2" ><label class="radio" for="dati_a2"><em>A.</em><span>题目a</span></label></li>
+        <li><input class="radio" type="radio" name="dati_2" id="dati_b2" ><label class="radio" for="dati_b2"><em>B.</em><span>题目b</span></label></li>
+        <li><input class="radio" type="radio" name="dati_2" id="dati_c2" ><label class="radio" for="dati_c2"><em>C.</em><span>题目c</span></label></li>
+        <li><input class="radio" type="radio" name="dati_2" id="dati_d2" ><label class="radio" for="dati_d2"><em>D.</em><span>题目d</span></label></li>
+    </ul>
+</div>
+</div>
+
+<div class="dp_info" data-qid="3">333
+<div class="dp_sel">
+    <ul>
+        <li class="dactive"><input class="radio" type="radio" name="dati_3" id="dati_a3" ><label class="radio" for="dati_a3"><em>A.</em><span>题目a</span></label></li>
+        <li><input class="radio" type="radio" name="dati_3" id="dati_b3" ><label class="radio" for="dati_b3"><em>B.</em><span>题目b</span></label></li>
+        <li><input class="radio" type="radio" name="dati_3" id="dati_c3" ><label class="radio" for="dati_c3"><em>C.</em><span>题目c</span></label></li>
+        <li><input class="radio" type="radio" name="dati_3" id="dati_d3" ><label class="radio" for="dati_d3"><em>D.</em><span>题目d</span></label></li>
+    </ul>
+</div>
+</div>
+
+<div class="dp_info" data-qid="4">444
+<div class="dp_sel">
+    <ul>
+        <li class="dactive"><input class="radio" type="radio" name="dati_4" id="dati_a4" ><label class="radio" for="dati_a4"><em>A.</em><span>题目a</span></label></li>
+        <li><input class="radio" type="radio" name="dati_4" id="dati_b4" ><label class="radio" for="dati_b4"><em>B.</em><span>题目b</span></label></li>
+        <li><input class="radio" type="radio" name="dati_4" id="dati_c4" ><label class="radio" for="dati_c4"><em>C.</em><span>题目c</span></label></li>
+        <li><input class="radio" type="radio" name="dati_4" id="dati_d4" ><label class="radio" for="dati_d4"><em>D.</em><span>题目d</span></label></li>
+    </ul>
+</div>
+</div>
+
+<div class="anslist"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+html,body {font-family:"Microsoft YaHei",sans-serif;font-size:14px;margin:0;padding:0;}
+ul,li{ margin:0; padding:0; list-style:none;}
+a,a:focus,input {outline:none;outline-style:none;} //虚线去除
+table {border-collapse:collapse;border-spacing:0;}
+a img {border: none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display: block;}
+ins,a:link,a:visited,a:hover,a:active {text-decoration: none;}
+.clear {clear: both;font-size: 0; height: 0;line-height: 0;}
+
+a,button,input,textarea{
+-webkit-tap-highlight-color: rgba(0,0,0,0); 
+}
+
+label.radio {width:100%;display:inline-block;}
+
+input[type='radio'].radio{opacity:1;position:absolute;display:inline-block;height:20px;cursor:pointer;}
+label.radio{background:none\9;  background-size:20px;height:20px;width:100%;padding-left:25px;}
+input[type='radio'].radio:checked+.radio{color:#5b61b2;}

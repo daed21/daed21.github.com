@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+  <title>jQuery学习2</title>
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no"/>
+  <script src="jquery-1.11.3.min.js" type="text/javascript"></script> 
+  <script src="jquery.cookie.js" type="text/javascript"></script> 
+  <script type="text/javascript"> 
+    $(function () { 
+      $("#username").val($.cookie("username")); 
+      if ($.cookie("like") == "1") { 
+        $(":radio[value='1']").attr("checked", 'checked') 
+      }else{  console.log("222");
+        $(":radio[value='0']").attr("checked", 'checked') 
+      } 
+      $(".btn").click(function () { console.log("button_click");
+        $.cookie("username", $("#username").val(), {
+          path: "/", expires: 7 
+        }) 
+        $.cookie("like", $(":radio[checked]").val(), { 
+          path: "/", expiress: 7 
+        }) 
+      }) 
+    }) 
+  </script> 
+</head> 
+<body> 
+  <p><input type="text" id="username" value="1234" /></p> 
+  <p> 
+    <input type="radio" name="like" value="1" />刘德华 
+    <input type="radio" name="like" value="0" />张学友 
+  </p> 
+  <p><input class="btn" type="button" value="保存" /></p> 
+</body> 
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>易班陪你看奥运</title>
+	<meta content="易班陪你看奥运" itemprop="keywords" name="keywords"/>
+    <meta content="易班陪你看奥运" itemprop="description" name="description"/>
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="jquery.cookie.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css?v=20160727">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no"/>
+</head>
+<body>
+<div id="username">User Tim123</div>
+
+<div id="check">check</div>
+
+
+<div class="dp_info" data-qid="1">
+<div class="dp_sel">
+	<ul>
+		<li><input class="radio" type="radio" name="dati_1" id="dati_a1" ><label class="radio" for="dati_a1"><em>A.</em><span>题目asdf</span></label></li>
+		<li><input class="radio" type="radio" name="dati_1" id="dati_b1" ><label class="radio" for="dati_b1"><em>B.</em><span>题目asdf</span></label></li>
+		<li><input class="radio" type="radio" name="dati_1" id="dati_c1" ><label class="radio" for="dati_c1"><em>C.</em><span>题目asdf</span></label></li>
+		<li><input class="radio" type="radio" name="dati_1" id="dati_d1" ><label class="radio" for="dati_d1"><em>D.</em><span>题目asdf</span></label></li>
+	</ul>
+</div>
+</div>
+<script>
+	$(function(){
+		var COOKIE_NAME = 'username';  console.log($.cookie(COOKIE_NAME, $("#username").html() , { path: '/', expires: 1 }));
+		var my = $.cookie(COOKIE_NAME, $("#username").html() , { path: '/', expires: 1 })
+ //if( $.cookie(COOKIE_NAME) ){  
+   $("#username").html(my);  
+ //}
+
+ $("#check").click(function(){  console.log(COOKIE_NAME);
+   if(this.checked){  
+     $.cookie(COOKIE_NAME, $("#username").html() , { path: '/', expires: 1 });  
+     //var date = new Date();  
+     //date.setTime(date.getTime() + (3 * 24 * 60 * 60 * 1000)); //三天后的这个时候过期  
+     //$.cookie(COOKIE_NAME, $("#username").val(), { path: '/', expires: date });  
+   }else{  
+     $.cookie(COOKIE_NAME, null, { path: '/' }); //删除cookie  
+   }  
+ });
+
+
+      $(".dp_sel li").click(function(){
+        $(this).addClass("dactive").siblings().removeClass("dactive");
+        var keyIndex = $(".dp_info").find('li').index($('.dactive').eq(0));
+//往cookie中放值
+console.log(keyIndex);
+//document.cookie = keyIndex;
+
+      });
+
+
+
+	});
+</script>
+	
+</body>
+</html> -->
