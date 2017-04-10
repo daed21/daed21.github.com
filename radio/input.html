@@ -26,17 +26,22 @@ $(function () {
     var oid = $.cookie('oid');   //alert(oid); 
     //[{"qid":"1","oid":3},{"qid":"2","oid":3},{"qid":"3","oid":4},{"qid":"4","oid":3}]
     $(".anslist").html(oid);
-    var ss = JSON.parse(oid);
+    var soid = JSON.parse(oid);
 　　//if(oid != null && oid != undefined && oid != 'undefined'){
 
-    $.each(ss,function(k,v){
-    //console.log(k+" "+v.qid+"&"+v.oid); //alert($(".dp_info").eq(k).data('qid'));
-    if($(".dp_info").eq(k).data('qid')==v.qid){
+    $.each(soid,function(k,v){
+        //console.log(k+" "+v.qid+"&"+v.oid); //alert($(".dp_info").eq(k).data('qid'));
+        /* if($(".dp_info").eq(k).data('qid')==v.qid){
+            var vid = v.oid -1;
+         $(".dp_info").eq(k).find('li').eq(vid).find('input').attr("checked","checked");
+        
+         $(".dp_info").eq(k).find('li').eq(vid).addClass("dactive").siblings().removeClass("dactive");
+        }*/
         var vid = v.oid -1;
-     $(".dp_info").eq(k).find('li').eq(vid).find('input').attr("checked","checked");
+        $(".oid"+v.oid+"").find('li').eq(vid).find('input').attr("checked","checked");
+        
+        $(".oid"+v.oid+"").find('li').eq(vid).addClass("dactive").siblings().removeClass("dactive");
     
-     $(".dp_info").eq(k).find('li').eq(vid).addClass("dactive").siblings().removeClass("dactive");
-     }
     });
 
 /*        $(".dp_sel").find('li').eq(oid).find('input').attr("checked","checked");
@@ -86,7 +91,12 @@ $(function () {
     <p>
         信息记录：<input type="text" id="msg"  value="" />  <input type="button" value="记住当前信息" id="sure" />
    </p>
-<div class="dp_info" data-qid="1">
+
+
+
+
+
+<div class="dp_info oid1" data-qid="1">
     111
 <div class="dp_sel">
     <ul>
@@ -98,7 +108,7 @@ $(function () {
 </div>
 </div>
 
-<div class="dp_info" data-qid="2">
+<div class="dp_info oid2" data-qid="2">
     222
 <div class="dp_sel">
     <ul>
@@ -110,7 +120,8 @@ $(function () {
 </div>
 </div>
 
-<div class="dp_info" data-qid="3">333
+
+<div class="dp_info oid3" data-qid="3">333
 <div class="dp_sel">
     <ul>
         <li class="dactive"><input class="radio" type="radio" name="dati_3" id="dati_a3" ><label class="radio" for="dati_a3"><em>A.</em><span>题目a</span></label></li>
@@ -121,7 +132,7 @@ $(function () {
 </div>
 </div>
 
-<div class="dp_info" data-qid="4">444
+<div class="dp_info oid4" data-qid="4">444
 <div class="dp_sel">
     <ul>
         <li class="dactive"><input class="radio" type="radio" name="dati_4" id="dati_a4" ><label class="radio" for="dati_a4"><em>A.</em><span>题目a</span></label></li>
@@ -131,6 +142,7 @@ $(function () {
     </ul>
 </div>
 </div>
+
 
 <div class="anslist"></div>
 </body>
