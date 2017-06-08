@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>模态框</title>
+	<script src="jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div class="btn-get">按钮</div>
+<!--快递信息 手机支付-->
+<div class="popup box-phone">
+    <div class="popup-container phone-con">
+    <span class="popup-close phone-close"><a href="javascript:;" >×</a></span>
+    <p class="pop-tit">请填写快递信息</p>
+    <form role="form">
+      <div class="form-group">
+        <label for="yphone">手机号</label>
+        <input type="tel" class="form-control" id="yphone" placeholder="必填" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="12">
+        <span class="y-tel"></span>
+      </div>
+      <div class="form-group">
+        <label for="yname">联系人</label>
+        <input type="text" class="form-control" id="yname" placeholder="必填">
+        <span class="y-name"></span>
+      </div>
+      <div class="form-group">
+        <label for="yadd">寄送地址</label>
+        <input type="text" class="form-control" id="yadd" placeholder="必填">
+        <span class="y-addr"></span>
+      </div>
+      <div class="form-btn">
+        <span class="btn-buy"><a href="javascript:;">支付10元快递费</a></span>
+        <span class="z-err"></span>
+      </div>
+    </form>
+    </div>
+</div>
+<div class="popbg"></div>
+<script>
+		$(".btn-get,.foot_get").click(function(){
+		$(".box-phone").addClass("is-visible");
+		$(".popbg").fadeIn();
+    });
+    $(".phone-close,.popbg").click(function(){
+		$(".box-phone").removeClass("is-visible");
+		$(".popbg").fadeOut();
+    });
+</script>
+
+<style type="text/css">
+	.btn-get {width: 170px; height:42px;line-height:40px;vertical-align:middle;margin:0 auto;text-align:center;color:#fff;font-size: 14px;font-weight:bold;border-radius:50px;border:1px solid #84bd32;background:#84bd32;display: block;}
+.btn-get:hover,.btn-get:active,.btn-get:focus {color:#fff;}
+
+.form-group input {width:270px;}
+
+
+.popup.is-visible,.box-get.is-visible,.box-phone.is-visible,.box-time.is-visible {opacity: 1; visibility: visible;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+.popbg {z-index:996;position:fixed;left:0;top:0;width: 100%;height: 100%;background:#000;
+    opacity:0.6;filter:alpha(opacity=60);display:none;}
+
+.popup {z-index:9999;position:fixed;left:50%;top: 40%;height:230px;width:300px;
+    margin-left:-150px;margin-top:-115px;opacity: 0;visibility: hidden;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;}
+
+.is-visible .popup-container {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);}
+.popup-container {position: relative;width:300px;height:230px;padding:32px 10px 10px 10px;
+    margin:0 auto;background: #fff;border-radius:10px;text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateY(-40px);
+    -moz-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    -o-transform: translateY(-40px);
+    transform: translateY(-40px);
+    -webkit-backface-visibility: hidden;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.mine-con {height:210px;}
+
+.box-phone {height:400px;margin-top:-150px;}
+.phone-con {height:400px;padding-left:15px;padding-right:15px;}
+
+.box-time {height:430px;margin-top:-160px;}
+.time-con {height:430px;padding:10px;}
+
+.phone-con .form-group {text-align:left;margin-bottom:20px; }
+.btn-buy {width:160px;height:40px;text-align:center;display:block;margin:30px auto 0;}
+.btn-buy a {width:160px;height:40px;line-height:40px;vertical-align:middle;color:#fff;text-align:center;display:block;background:#84bd32;border-radius:50px;border:0px;cursor:pointer;}
+.y-tel,.y-name,.y-addr {position:absolute;color:#f00;font-size:13px;}
+
+.ylist {height:290px;overflow-y:auto;}
+.ylist ul {height:290px;overflow-y:auto;}
+.ylist li {border:0;border-bottom:1px solid #ddd;width:100%;display:block;position:relative;}
+input[type='radio'].radio {display:inline-block;position:absolute;left:0;top:4px;}
+.ylist li .rad {width:100%;position:relative;margin:0;padding:5px 5px 10px 16px;}
+.ylist li span {font-weight:normal;text-align:left;margin-bottom:4px;}
+
+.ytit {display:block;}
+.yinfo {display:block;}
+.ytime {display:block;}
+
+.btn-yue {width:100px;height:40px;text-align:center;display:block;margin:20px auto 0;}
+.btn-yue a {width:100px;height:40px;line-height:40px;vertical-align:middle;color:#fff;text-align:center;display:block;background:#84bd32;border-radius:50px;border:0px;cursor:pointer;}
+.y-err,.z-err {color:#f00;}
+
+
+.popup-close {width:40px;height:40px;position:absolute;top:0;right:0;color:#666;}
+.popup-close a {width:40px;height:40px;line-height:34px;text-align:center;display:block;position:relative;font-size:22px;
+    font-weight: bold;z-index:2;color:#999;}
+.pop-tit {font-size:16px;margin:10px auto; }
+.pop-info {}
+.fast-get {width:140px;height:32px;border-radius:50px;border:0;margin:30px auto 0;}
+.addr-get {width:140px;height:32px;border-radius:50px;border:0;margin:20px auto 0;}
+.fast-get a,.addr-get a {width:140px;height:32px;line-height:30px;vertical-align:middle; display:block;border-radius:10px;border:1px solid #6bad42;color:#6bad42;}
+.fast-get a:hover,.addr-get a:hover {border:1px solid #6bad42;background:#6bad42;color:#fff;}
+
+.mbook {width:140px;height:32px;border-radius:50px;border:0;margin:30px auto 0;}
+.myue {width:140px;height:32px;border-radius:50px;border:0;margin:20px auto 0;}
+.mbook a,.myue a {width:140px;height:32px;line-height:30px;vertical-align:middle; display:block;border-radius:10px;border:1px solid #6bad42;color:#6bad42;}
+.mbook a:hover,.myue a:hover {border:1px solid #6bad42;background:#6bad42;color:#fff;}
+
+.form-control {width:328px;padding: 6px 12px;font-size: 14px;height:20px;display: block;
+    line-height:20px; color: #555;background-color: #fff;
+    background-image: none;border: 1px solid #ccc;border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.file-control {width:328px;padding: 6px 12px;font-size: 14px;display: block;
+    line-height:20px; color: #555;background-color: #fff;
+    background-image: none;border: 1px solid #ccc;border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.pop-gate {color:#ce0d0c;font-size:22px;}
+.f-down {display:inline-block;color:#60a6db;}
+.f-down a {display:inline-block;color:#60a6db;}
+.f-word {line-height:22px;}
+
+
+</style>
+</body>
+</html>
