@@ -71,6 +71,7 @@ $(function() {
                     click_sign = true;
                 }
             }
+            
 
             //分页只初始化1次
             /*  if($("#pagination_gold").html().length == ''){
@@ -81,4 +82,11 @@ $(function() {
         "json");
     }
 
+                $(".edit_btn a").click(function(){
+                    var goval = $(".ptext").val();
+                    pagination_gold = null;
+                     getDataList(goval-1);
+
+                });
+    
 });
