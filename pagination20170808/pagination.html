@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分页demo</title>
+	<meta content="易班分页" itemprop="keywords" name="keywords"/>
+    <meta content="易班分页" itemprop="description" name="description"/>
+    <link rel="stylesheet" type="text/css" href="main.css?v=20160727">
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="pagination.js"></script>
+	<script src="index.js"></script>
+</head>
+<body>
+<div class="page_wrap">
+	<div class="table_block">
+      <div class="table_head">
+        <ul><li class="t-title">标题</li><li class="t-view">浏览量</li><li  class="t-time">上传时间</li><li  class="t-operate">操作</li></ul>
+      </div>
+  		<div class="table_wrap">
+  			<ul class="tlist">
+          <li data-tid='1'>
+            <span class='s-title'></span>
+            <span class='s-view'></span>
+            <span class='s-time'></span>
+            <span class='s-operate'>
+              <a href='javascript:;' class="s-edit"></a>
+              <a href='javascript:;' class="s-del"></a>
+              <a href='javascript:;' class="s-down"></a>
+            </span>
+          </li>
+  			</ul>
+  		</div>
+    </div>
+  	<div id="pagination_gold" class="gold_pagination"></div>
+
+</div>
+</body>
