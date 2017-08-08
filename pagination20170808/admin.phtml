@@ -1,0 +1,144 @@
+<?php $this -> component('Global_Sttop'); ?>
+<div class="home_wrap myadmin">
+
+  <div class="content_top"></div>
+  <div class="content_wrap">
+  	<div class="content_block">
+  	 <div class="content_info">
+  		<div class="cnav"><a href="/dianping/topics/jiariban/index">首页</a><span class="gwork">　&gt;　管理上传　</span><span class="nav_area" style="display:none"></span></div>
+  		<h2 class="h2_area"></h2>
+  		<p class="cinfo"></p>
+      <div class="btn-admin">
+        <div class="b-wrap">
+          <span class="b-up"><a href="javascript:;">上传</a></span>
+          <span class="b-all"><a href="/dianping/topics/jiariban/download?areaId=<?= intval($areaId);?>" target='_blank'>全部下载</a></span>
+        </div>
+      </div>
+<?php if(intval($areaId)==0){?>
+<div class="select_wrap">
+ <select name="areasid" class="mysel">
+ </select>
+</div>
+<?php }?>
+    <div class="table_block">
+      <div class="table_head">
+        <ul><li class="t-title">标题</li><li class="t-view">浏览量</li><li  class="t-time">上传时间</li><li  class="t-operate">操作</li></ul>
+      </div>
+  		<div class="table_wrap">
+  			<ul class="tlist">
+          <li data-tid='1'>
+            <span class='s-title'></span>
+            <span class='s-view'></span>
+            <span class='s-time'></span>
+            <span class='s-operate'>
+              <a href='javascript:;' class="s-edit"></a>
+              <a href='javascript:;' class="s-del"></a>
+              <a href='javascript:;' class="s-down"></a>
+            </span>
+          </li>
+  			</ul>
+  		</div>
+    </div>
+  		<div id="pagination_gold" class="gold_pagination"></div>
+  	 </div>
+  	</div>
+
+  </div>
+  <div class="content_foot"></div>
+
+
+
+  <div class="admin_top">
+  </div>
+
+ </div>
+
+  <div class="mybox myup">
+    <span class="m-close close-up">×</span>
+    <div class="box_info">
+      <h4>上传编辑简报</h4>
+    <form id="myform" name="f1" enctype="multipart/form-data" action="<?= $_SERVER['REQUEST_URI'];?>" method="post">
+      <div class="form-group">
+        <label for="ytit" class="ftit">简报标题</label>
+        <input type="text" class="form-tit" id="ytit" name="title" placeholder="必填" value="" />
+        <span class="y-tit"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="yfile">上传文档</label>
+        <input type="file" class="file-control" id="yfile" name="file" />
+        <span class="y-file"></span>
+      </div>
+      <input type="hidden" class="uparea" name="area" value="1" />
+      <input type="hidden" name="action" value="upload" />
+      <div class="form-btn">
+        <span class="btn-sub"><a href="javascript:void(0);" class="J_submitButton">提 交</a></span>
+      </div>
+
+    </form>
+    </div>
+  </div>
+
+
+  <div class="mybox myedit">
+    <span class="m-close close-edit">×</span>
+    <div class="box_info">
+      <h4>上传编辑简报</h4>
+    <form id="myform2" name="f2" enctype="multipart/form-data" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>" method="post">
+      <div class="form-group">
+        <label for="ytit" class="ftit">简报标题</label>
+        <input type="text" class="form-tit" id="ytit2" name="title" placeholder="必填" value="" />
+        <span class="y-tit"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="yfile">上传文档</label>
+        <span class="mfilename"></span>
+        <span class="y-file"></span>
+      </div>
+      <input type="hidden" class="tid" name="id" value="" />
+      <div class="form-btn">
+        <span class="btn-edit"><a href="javascript:;">提 交</a></span>
+      </div>
+    </form>
+    </div>
+  </div>
+
+  <div class="mybox mysure">
+    <span class="m-close close-sure">×</span>
+    <div class="box_info">
+      <p class="box_del">确认删除该简报</p>
+      <div class="box_sure"><span class="sure_del" data-del="1"><a href="javascript:;">删除</a></span><span class="sure_cancel"><a href="javascript:;">取消</a></span></div>
+    </div>
+  </div>
+
+  <div class="mybox mytip">
+    <span class="m-close close-success">×</span>
+    <div class="box_info">
+      <p class="box_word">编辑成功</p>
+    </div>
+  </div>
+
+  <div class="boxbg"></div>
+
+<?php $this -> component('Global_bottom'); ?>
+<script type="text/javascript" src="/dianping/www/js/2013/project/jiariban/pagination.js"></script>
+<script type="text/javascript" src="/dianping/www/js/2013/lib/jquery.form.min.js"></script>
+<script type="text/javascript" src="/dianping/www/js/2013/project/jiariban/jquery.validate.min.js"></script>
+<script type="text/javascript">
+	var sessionid = '<?php echo isset($logoinfo['sessionid']) ? $logoinfo['sessionid'] : '';?>';
+	seajs.use('project/jiariban/index', function(init) {
+		init();
+	});
+</script>
+
+<script type="text/javascript">
+var userid = <?= intval($userid);?>;
+var areaId = <?= intval($areaId);?>;
+var onlyaid = <?= intval($areaId);?>;
+<?php
+if (!empty($error)){
+	echo "alert('".$error."');";
+}
+?>
+</script>
