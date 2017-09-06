@@ -1,0 +1,25 @@
+@charset "utf-8";
+/**
+ *
+ * @authors TianZhihan (tzh@yiban.cn)
+ * @date    2015-08-03 15:21:31
+ * @version $Id$
+ */
+html,body{padding:0;margin:0;background:#fff;font-family:"微软雅黑", "Microsoft YaHei",Helvetica, Arial, sans-serif;background:#000;}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, p, blockquote, th, td, li, img, input,figure{margin:0;padding:0;border:0}
+ul, li{list-style: none outside none;margin: 0;padding: 0;}
+img{vertical-align: middle;border:none;}
+.clear{clear: both;padding: 0;margin: 0;font-size: 0; height: 0;line-height: 0;}
+.clearFix{clear: both;content: "."; display: block; height: 0;visibility: hidden;}
+.clearFix{ *display:inline-block;}
+textarea{outline:none;resize:none;}
+a{text-decoration: none;outline: 0;}
+a,a:focus,input {outline:none;outline-style:none;}
+ol,ul {list-style: none;}
+table {border-collapse:collapse;border-spacing:0;}
+a img {border: none;}
+ins,a:link,a:visited,a:hover,a:active {text-decoration: none;color:#000;}
+.asdf {height:221px;color:#fff;width:900px;font-size:80px; margin:0 auto;padding-top:100px; }
+.right {width:920px;margin:0 auto;margin-top:50px; }
+.right li {height:20px;float:left;margin-right:20px;line-height:20px;}
+.right a {color:#fff;float:left;display:inline;height:20px;}
