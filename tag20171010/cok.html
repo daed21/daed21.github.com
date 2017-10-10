@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cok find div</title>
+	<meta content="cok" itemprop="keywords" name="keywords"/>
+    <meta content="cok" itemprop="description" name="description"/>
+    <link rel="stylesheet" type="text/css" href="main.css?v=20160727">
+	<script src="jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+    .order-form {margin:20px;float:left; }
+    .cok .uploadify-button-text{color:#f0f;}
+    .J_save {color:#333;}
+	</style>
+</head>
+<body>
+<div class="J_getTpl">
+  <input type="hidden" value="11"> <!--0~11-->
+
+  <div class="order-form clearfix">
+  	<label for="" class="order-label">作品说明</label>
+  	<div class="order-ctrl">
+        <textarea rows="3" class="order-text myorder" data-order="mypro" name="作品说明" must="1" placeholder="请输入作品说明" value=""></textarea>
+        <span class="order-tips J_msg"></span>       
+    </div>
+  </div>
+
+  <div class="order-form clearfix">
+  	<label for="" class="order-label">上传文件</label>
+	<div class="order-ctrl">
+		<div class="J_file ">
+			<div id="upload_file_5">
+				<div id="upload_file_5-button" class="uploadify-button order-btn btn-file" style="height: 38px; line-height: 38px; width:142px;"><span class="uploadify-button-text">选取文件</span></div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+  <div class="order-form clearfix">
+  	<label for="" class="order-label">上传文件</label>
+	<div class="order-ctrl">
+		<div class="J_file ">
+			<div id="upload_file_6">
+				<div id="upload_file_6-button" class="uploadify-button order-btn btn-file" style="height: 38px; line-height: 38px; width:142px;"><span class="uploadify-button-text">选取文件</span></div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+  <div class="order-form clearfix">
+  	<label for="" class="order-label">上传文件</label>
+	<div class="order-ctrl">
+		<div class="J_file ">
+			<div id="upload_file_7">
+				<div id="upload_file_7-button" class="uploadify-button order-btn btn-file" style="height: 38px; line-height: 38px; width:142px;"><span class="uploadify-button-text">选取文件</span></div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+</div>
+
+<div class="order-form clearfix">
+<label for="" class="order-label">&nbsp;</label>
+	<div class="order-ctrl">
+	    <a href="javascript:;" class="order-btn btn-save J_save">报&nbsp;&nbsp;&nbsp;&nbsp;名</a>
+	    <div class="obg"></div>
+	</div>
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+	$(function(){
+		$(".order-form").click(function(){ 
+			$(this).children().find(".J_file").addClass("cok");
+			//alert("上传成功"); 
+		});
+
+$(".J_save").click(function(){
+
+
+
+var jfile = $('.order-form .J_file').length;
+var cok = $('.order-form .J_file.cok').length;
+
+alert("J_file:"+jfile+",cok:"+cok);
+
+
+	if($(".order-ctrl").children(".J_file").hasClass("cok")){
+		$(".J_save").css({"color":"#f0f"});
+	}else{
+		$(".J_save").css({"color":"#333"});
+	}
+
+});
+
+
+
+		
+	});
+</script>
