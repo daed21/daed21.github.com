@@ -51,7 +51,7 @@ $(function(){
     }
 
 
-    if(IsPC()){  mypc("click"); }else{  mypc("touchstart"); }
+    if(IsPC()){  mypc("mousedown"); }else{  mypc("touchstart"); }
     function mypc(cik){
         $(".mshow").on(cik,".sugar",function(){
             if(jflag==1){
