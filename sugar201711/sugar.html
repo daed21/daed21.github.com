@@ -55,7 +55,7 @@ $(function(){
     function mypc(cik){
         $(".mshow").on(cik,".sugar",function(){
             if(jflag==1){
-                $(this).fadeOut(100);
+                $(this).fadeOut(0);
                 snum = parseInt(snum +1);
                 console.log(snum);
             }
@@ -110,8 +110,8 @@ $(function(){
       var top = Math.floor(Math.random()*300);
       $(".sugar").html("left:"+left+",top:"+top);
       $(".sugar").css({"left":left,"top":top});
-      $(".sugar").show();
-      tt = setTimeout("mysugar()",600);
+      $(".sugar").fadeIn(200);
+      tt = setTimeout("mysugar()",500);
   }
 
 </script>
