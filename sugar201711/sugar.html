@@ -20,14 +20,14 @@
 var jflag = 0;
 var snum = 0;
 $(function(){
-    var ctime=3;
+    var ctime=20;
     var tt;
     $(".sbtn").click(function(){ //alert(jflag);
         if(jflag==0){
           snum = 0;
           jflag = 1; //开始 置为1
           $(".dati_time").html("20");
-          countDown(3); //倒计时20
+          countDown(ctime); //倒计时20
 
           mysugar();
             
@@ -56,7 +56,7 @@ $(function(){
         $(".mshow").on(cik,".sugar",function(){
             if(jflag==1){
                 $(this).fadeOut(100);
-                snum = snum +1;
+                snum = parseInt(snum +1);
                 console.log(snum);
             }
         });
@@ -111,7 +111,7 @@ $(function(){
       $(".sugar").html("left:"+left+",top:"+top);
       $(".sugar").css({"left":left,"top":top});
       $(".sugar").show();
-      tt = setTimeout("mysugar()",1600);
+      tt = setTimeout("mysugar()",600);
   }
 
 </script>
