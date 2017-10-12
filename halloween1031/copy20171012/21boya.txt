@@ -1,0 +1,7 @@
+E:\myboya-git20170928\boya\dianping\www\js\2013\project\jiariban
+
+clipboard复制
+
+pagination分页 
+
+scroll向上滚动
