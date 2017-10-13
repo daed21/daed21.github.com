@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sugar2017</title>
+  <meta content="sugar" itemprop="keywords" name="keywords"/>
+    <meta content="sugar" itemprop="description" name="description"/>
+  <script src="jquery-1.11.3.min.js"></script>
+
+</head>
+<body>
+<div class="sugar_wrap"> <div class="dati_time">00</div>
+  <div class="mshow">
+    <div class="sugar" id="sugar"></div>
+  </div>
+</div>
+
+<div class="abox">
+  <span class="close">×</span>
+  <p class="tword"></p>
+  <div class="bsure">确定</div>
+</div>
+
+<div class="sbtn">开始</div>
+<script>
+var jflag = 0;
+var snum = 0;
+$(function(){
+    var ctime=2;//秒数
+    var tt;
+    $(".sbtn").click(function(){ //alert(jflag);
+        if(jflag==0){
+          snum = 0;
+          jflag = 1; //开始 置为1
+          $(".dati_time").html("20");
+          countDown(ctime); //倒计时20
+
+          mysugar();
+            
+        }
+    });
+
+
+
+
+});
+
+
+    function IsPC(){    
+        var userAgentInfo = navigator.userAgent;  
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");    
+        var flag = true;    
+        for (var v = 0; v < Agents.length; v++) {    
+            if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }    
+        }    
+        return flag;    
+    }
+
+
+    if(IsPC()){  mypc("mousedown"); }else{  mypc("touchstart"); }
+    function mypc(cik){
+        $(".mshow").on(cik,".sugar",function(){
+            if(jflag==1){
+                $(this).fadeOut(0);
+                snum = parseInt(snum +1);
+                console.log(snum);
+            }
+        });
+
+    }
+
+
+  //倒计时20
+  function countDown(ctime){
+    var timer=setInterval(function(){
+      if(ctime>0){
+        ctime--;
+        showTime(ctime);
+      }else{ jflag = 0; //结束置为0; jflag 外面都为0
+        clearInterval(timer);
+
+           
+        $(".dati_time").html("00");
+
+        $(".sugar").hide();
+        clearTimeout(tt);
+
+        if(jflag==0){ 
+           //gotj(); //显示结果 调接口给snum
+           //alert("snum:"+snum);
+           $(".abox p.tword").html("snum:"+snum);
+           $(".abox").fadeIn();
+        }
+
+      }
+    },1000);
+  }
+
+  function showTime(ctime){      //这段是计算分和秒的具体数
+    var secondpay =  fillZero(Math.floor(ctime % 60),2);
+    var minitepay =  fillZero(Math.floor((ctime / 60) % 60),2);
+    var hourpay =  fillZero(Math.floor((ctime / 3600) % 24),2);
+    var daypay =  fillZero(Math.floor((ctime / 3600) / 24),2);
+    $(".dati_time").html(secondpay);
+  }
+      
+  function fillZero(num, digit)
+  { var str=''+num;
+      while(str.length<digit)
+      { str='0'+str;
+      }
+      return str;
+  }
+
+  //移动糖果
+  function mysugar(){
+      var left = Math.floor(Math.random()*300);
+      var top = Math.floor(Math.random()*300);
+      $(".sugar").html("left:"+left+",top:"+top);
+      $(".sugar").css({"left":left,"top":top});
+      $(".sugar").fadeIn(200);
+      tt = setTimeout("mysugar()",500);
+  }
+
+</script>
+<style type="text/css">
+.sugar_wrap {width:600px;height:500px; color:#f8f8f8; border:1px solid #666;}
+.mshow {width:400px;height:400px;margin:50px auto;border:1px solid #333;position:relative;}
+.sugar {width:30px;height:30px;background:#555;border-radius:50px;position:relative;display:none;}
+
+.abox {width:600px;height:450px;position:fixed;left:50%;top:40%;margin-left:-300px;margin-top:-225px;background:#f4f4f4;display:none;}
+.abox span.close {position:absolute;width:30px;height:30px;color:#333;top:0;right:0;}
+.abox .bsure {width:200px;height:40px;margin:0 auto;color:#333;border:1px solid #666;border-radius:10px;text-align:center;line-height:40px;}
+
+
+
+
+
+html,body {font-family:"Microsoft YaHei",sans-serif;font-size:14px;margin:0;padding:0;}
+ul,li{ margin:0; padding:0; list-style:none;}
+a,a:focus,input {outline:none;outline-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+a img {border: none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display: block;}
+ins,a:link,a:visited,a:hover,a:active {text-decoration: none;}
+.clear {clear: both;font-size: 0; height: 0;line-height: 0;}
+
+a,button,input,textarea{
+-webkit-tap-highlight-color: rgba(0,0,0,0); 
+}
+
+input{outline:none;}
+textarea.order-text {outline:none;} 
+ body {background-color:#3A4954;padding:0;margin:0;}
+
+</style>
+</body>
+</html>
