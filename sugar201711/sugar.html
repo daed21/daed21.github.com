@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div class="tbox">
+<div class="abox">
   <span class="close">×</span>
   <p class="tword"></p>
   <div class="bsure">确定</div>
@@ -26,7 +26,7 @@
 var jflag = 0;
 var snum = 0;
 $(function(){
-    var ctime=20;
+    var ctime=2;//秒数
     var tt;
     $(".sbtn").click(function(){ //alert(jflag);
         if(jflag==0){
@@ -88,8 +88,8 @@ $(function(){
         if(jflag==0){ 
            //gotj(); //显示结果 调接口给snum
            //alert("snum:"+snum);
-           $(".tbox p.tword").html("snum:"+snum);
-           $(".tbox").fadeIn();
+           $(".abox p.tword").html("snum:"+snum);
+           $(".abox").fadeIn();
         }
 
       }
@@ -128,9 +128,9 @@ $(function(){
 .mshow {width:400px;height:400px;margin:50px auto;border:1px solid #333;position:relative;}
 .sugar {width:30px;height:30px;background:#555;border-radius:50px;position:relative;display:none;}
 
-.tbox {width:600px;height:450px;position:fixed;left:50%;top:40%;margin-left:-300px;margin-top:225px;background:#f4f4f4;display:none;}
-.tbox span.close {position:absolute;width:30px;height:30px;color:#fff;top:0;right:0;}
-.tbox .bsure {width:200px;height:40px;color:#fff;border:1px solid #666;border-radius:10px;}
+.abox {width:600px;height:450px;position:fixed;left:50%;top:40%;margin-left:-300px;margin-top:-225px;background:#f4f4f4;display:none;}
+.abox span.close {position:absolute;width:30px;height:30px;color:#333;top:0;right:0;}
+.abox .bsure {width:200px;height:40px;margin:0 auto;color:#333;border:1px solid #666;border-radius:10px;text-align:center;line-height:40px;}
 
 
 
