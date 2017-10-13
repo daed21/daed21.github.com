@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>sugar2017</title>
-  <meta content="sugar" itemprop="keywords" name="keywords"/>
-    <meta content="sugar" itemprop="description" name="description"/>
-  <script src="jquery-1.11.3.min.js"></script>
+<meta charset="UTF-8">
+<title>sugar2017</title>
+<meta content="sugar" itemprop="keywords" name="keywords"/>
+<meta content="sugar" itemprop="description" name="description"/>
+<script src="jquery-1.11.3.min.js"></script>
 
 </head>
 <body>
@@ -16,19 +16,28 @@
 </div>
 
 <div class="abox">
-  <span class="close">×</span>
+  <span class="aclose">×</span>
   <p class="tword"></p>
-  <div class="bsure">确定</div>
+  <div class="asure">确定</div>
 </div>
+<div class="tboxbg"></div>
 
-<div class="sbtn">开始</div>
+
+<div class="sabtn">开始</div>
+
+<!-- <a class="post-title-link" href="/2017/04/11/bibidao01/" itemprop="url">
+                  大胖逼逼叨-程序员成神营销路
+                </a> -->
+
 <script>
 var jflag = 0;
 var snum = 0;
 $(function(){
     var ctime=2;//秒数
     var tt;
-    $(".sbtn").click(function(){ //alert(jflag);
+    $(".sabtn").click(function(){ //alert(jflag);
+      //ajax 签到次数接口
+
         if(jflag==0){
           snum = 0;
           jflag = 1; //开始 置为1
@@ -40,97 +49,97 @@ $(function(){
         }
     });
 
-
-
-
 });
 
 
-    function IsPC(){    
-        var userAgentInfo = navigator.userAgent;  
-        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");    
-        var flag = true;    
-        for (var v = 0; v < Agents.length; v++) {    
-            if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }    
-        }    
-        return flag;    
+function IsPC(){    
+    var userAgentInfo = navigator.userAgent;  
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");    
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }    
     }
+    return flag;
+}
 
-
-    if(IsPC()){  mypc("mousedown"); }else{  mypc("touchstart"); }
-    function mypc(cik){
-        $(".mshow").on(cik,".sugar",function(){
-            if(jflag==1){
-                $(this).fadeOut(0);
-                snum = parseInt(snum +1);
-                console.log(snum);
-            }
-        });
-
-    }
-
-
-  //倒计时20
-  function countDown(ctime){
-    var timer=setInterval(function(){
-      if(ctime>0){
-        ctime--;
-        showTime(ctime);
-      }else{ jflag = 0; //结束置为0; jflag 外面都为0
-        clearInterval(timer);
-
-           
-        $(".dati_time").html("00");
-
-        $(".sugar").hide();
-        clearTimeout(tt);
-
-        if(jflag==0){ 
-           //gotj(); //显示结果 调接口给snum
-           //alert("snum:"+snum);
-           $(".abox p.tword").html("snum:"+snum);
-           $(".abox").fadeIn();
+if(IsPC()){  mypc("mousedown"); }else{  mypc("touchstart"); }
+function mypc(cik){
+    $(".mshow").on(cik,".sugar",function(){
+        if(jflag==1){
+            $(this).fadeOut(0);
+            snum = parseInt(snum +1);
+            console.log(snum);
         }
+    });
 
+}
+
+
+//倒计时20
+function countDown(ctime){
+  var timer=setInterval(function(){
+    if(ctime>0){
+      ctime--;
+      showTime(ctime);
+    }else{ jflag = 0; //结束置为0; jflag 外面都为0
+      clearInterval(timer);
+
+      $(".dati_time").html("00");
+
+      $(".sugar").hide();
+      clearTimeout(tt);
+
+      if(jflag==0){ 
+         //gotj(); //显示结果 调接口给snum
+         //alert("snum:"+snum);
+         $(".abox p.tword").html("snum:"+snum);
+         $(".abox,.tboxbg").fadeIn();
       }
-    },1000);
-  }
 
-  function showTime(ctime){      //这段是计算分和秒的具体数
-    var secondpay =  fillZero(Math.floor(ctime % 60),2);
-    var minitepay =  fillZero(Math.floor((ctime / 60) % 60),2);
-    var hourpay =  fillZero(Math.floor((ctime / 3600) % 24),2);
-    var daypay =  fillZero(Math.floor((ctime / 3600) / 24),2);
-    $(".dati_time").html(secondpay);
-  }
-      
-  function fillZero(num, digit)
-  { var str=''+num;
-      while(str.length<digit)
-      { str='0'+str;
-      }
-      return str;
-  }
+    }
+  },1000);
+}
 
-  //移动糖果
-  function mysugar(){
-      var left = Math.floor(Math.random()*300);
-      var top = Math.floor(Math.random()*300);
-      $(".sugar").html("left:"+left+",top:"+top);
-      $(".sugar").css({"left":left,"top":top});
-      $(".sugar").fadeIn(200);
-      tt = setTimeout("mysugar()",500);
-  }
+function showTime(ctime){      //这段是计算分和秒的具体数
+  var secondpay =  fillZero(Math.floor(ctime % 60),2);
+  var minitepay =  fillZero(Math.floor((ctime / 60) % 60),2);
+  var hourpay =  fillZero(Math.floor((ctime / 3600) % 24),2);
+  var daypay =  fillZero(Math.floor((ctime / 3600) / 24),2);
+  $(".dati_time").html(secondpay);
+}
+    
+function fillZero(num, digit)
+{ var str=''+num;
+    while(str.length<digit)
+    { str='0'+str;
+    }
+    return str;
+}
 
+//移动糖果
+function mysugar(){
+    /*$(".sugar").hide();*/
+    var left = Math.floor(Math.random()*300);
+    var top = Math.floor(Math.random()*300);
+    $(".sugar").html("left:"+left+",top:"+top);
+    $(".sugar").css({"left":left,"top":top});
+    $(".sugar").fadeIn(200);
+    tt = setTimeout("mysugar()",500);
+}
+
+$(".asure,.aclose").click(function(){
+$(".abox,.tboxbg").fadeOut();
+});
 </script>
 <style type="text/css">
 .sugar_wrap {width:600px;height:500px; color:#f8f8f8; border:1px solid #666;}
 .mshow {width:400px;height:400px;margin:50px auto;border:1px solid #333;position:relative;}
 .sugar {width:30px;height:30px;background:#555;border-radius:50px;position:relative;display:none;}
 
-.abox {width:600px;height:450px;position:fixed;left:50%;top:40%;margin-left:-300px;margin-top:-225px;background:#f4f4f4;display:none;}
-.abox span.close {position:absolute;width:30px;height:30px;color:#333;top:0;right:0;}
-.abox .bsure {width:200px;height:40px;margin:0 auto;color:#333;border:1px solid #666;border-radius:10px;text-align:center;line-height:40px;}
+.abox {width:400px;height:280px;position:fixed;left:50%;top:40%;margin-left:-200px;margin-top:-140px;background:#f4f4f4;display:none;z-index:99}
+.abox span.aclose {position:absolute;width:30px;height:30px;color:#333;top:0;right:0;}
+.abox .asure {width:200px;height:40px;margin:0 auto;color:#333;border:1px solid #666;border-radius:10px;text-align:center;line-height:40px;}
+.tboxbg {width:100%;height:100%;position:fixed;left:0;top:0;bottom:0;z-index:90;background:#333;opacity:0.6;filter:alpha(opacity=60);display:none;}
 
 
 
@@ -151,7 +160,45 @@ a,button,input,textarea{
 
 input{outline:none;}
 textarea.order-text {outline:none;} 
- body {background-color:#3A4954;padding:0;margin:0;}
+
+body {background-color:#3A4954;padding:0;margin:0;}
+
+.post-title-link {
+    display: inline-block;
+    position: relative;
+    color: #555;
+   /*  border-bottom: none; */
+    line-height: 1.2;
+    vertical-align: top;
+}
+
+
+.post-title-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+.post-title-link:hover::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
 
 </style>
 </body>
