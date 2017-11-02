@@ -1,0 +1,25 @@
+操作json格式的字符串
+
+定义数组carr []进行 for in循环 将jarr={} push到数组里: carr.push(jarr);
+
+function myclass(){
+	var carr = [];
+	for(var i in classify){
+		var jarr = {};
+		if(classify[i]['parent'] == 116){
+	      //carr.push(i);
+	      var sec = classify[i]['name'];
+	
+	      //carr.push(sec);
+	       jarr.id = i;
+	       jarr.name = classify[i]['name'];
+	       carr.push(jarr);
+		}
+	}
+		console.log(carr);
+	return JSON.stringify(carr);
+
+
+}
+
+console.log(myclass());

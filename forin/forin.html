@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<title>抽奖lottery</title>
+<script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+<div class="for_wrap">
+	<div class="class1"></div>
+</div>
+
+
+<style type="text/css">
+html,body {font-family:"Microsoft YaHei",sans-serif;font-size:14px;margin:0;padding:0;}
+ul,li{ margin:0; padding:0; list-style:none;}
+a,a:focus,input {outline:none;outline-style:none;} /*虚线去除*/
+table {border-collapse:collapse;border-spacing:0;}
+a img {border: none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display: block;}
+ins,a:link,a:visited,a:hover,a:active {text-decoration: none;}
+.clear {clear: both;font-size: 0; height: 0;line-height: 0;}
+
+a,button,input,textarea{
+-webkit-tap-highlight-color: rgba(0,0,0,0); 
+}
+
+input{outline:none;}
+textarea.order-text {outline:none;}
+
+body {background:#999;}
+.for_wrap {width:500px;border:1px solid #666;margin:0 auto;height:300px;position:relative;display:block;}
+
+</style>
+
+<script type="text/javascript">
+$(function(){
+    var classify = {"116":{"name":"\u5f81\u6587\u6f14\u8bb2","parent":0},"117":{"name":"\u5320\u5fc3\u9010\u68a6","parent":116},"118":{"name":"\u6211\u4e0e\u7f51\u7edc\u751f\u6d3b","parent":116},"119":{"name":"\u804c\u4e1a\u89c4\u5212\u4e0e\u521b\u65b0\u8bbe\u8ba1","parent":0},"120":{"name":"\u804c\u4e1a\u89c4\u5212","parent":119},"121":{"name":"\u521b\u65b0\u8bbe\u8ba1","parent":119},"122":{"name":"\u6444\u5f71\u4e0e\u89c6\u9891","parent":0},"123":{"name":"\u6444\u5f71\u7c7b","parent":122},"124":{"name":"\u89c6\u9891\u7c7b","parent":122},"129":{"name":"\u624d\u827a\u5c55\u793a","parent":0},"130":{"name":"\u821e\u53f0\u7c7b","parent":129},"134":{"name":"\u975e\u821e\u53f0\u7c7b","parent":129},"137":{"name":"\u7279\u8bbe\u9879\u76ee","parent":0},"138":{"name":"\u56fe\u7247\u4f5c\u54c1","parent":137},"141":{"name":"\u6b4c\u66f2\u4f5c\u54c1","parent":137},"142":{"name":"\u89c6\u9891\u4f5c\u54c1","parent":137}};
+
+//console.log(classify);
+var cname =classify[116].name;
+var class1 = JSON.stringify(cname);
+//console.log(cname);
+
+//var sec = "";
+
+
+$(".class1").html(cname+"-");
+
+function myclass(){
+	var carr = [];
+	for(var i in classify){
+		var jarr = {};
+		if(classify[i]['parent'] == 116){
+	      //carr.push(i);
+	      var sec = classify[i]['name'];
+	
+	      //carr.push(sec);
+	       jarr.id = i;
+	       jarr.name = classify[i]['name'];
+	       carr.push(jarr);
+		}
+	}
+		console.log(carr);
+	return JSON.stringify(carr);
+
+
+}
+
+console.log(myclass());
+//var car1 = carr[0];
+//var cname1 =classify[car1]['name'];
+
+//console.log("car1:"+car1+",cname1:"+cname1);
+
+
+
+
+
+
+});
+</script>
+	</body>
+</html>
