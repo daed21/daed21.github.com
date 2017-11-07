@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta http-equiv="description" content="CSS3 Shapes实现列表自动环绕iPhone X刘海头">
+<meta name="description" content="web前端学习实例页面之 CSS3 Shapes实现列表自动环绕iPhone X刘海头">
+<meta name="keywords" content="CSS3, Shapes, CSS regions, iPhone X, float,">
+<meta name="author" content="Tim">
+<title>CSS3 Shapes实现列表自动环绕iPhone X刘海头</title>
+<link rel="stylesheet" href="../jquery-1.11.3.min.js">
+<style type="text/css">
+.demo {padding:10px;}
+.box {
+	width: 668px;
+	height: 375px;
+	border: solid #000;
+	margin: auto;
+	overflow: auto;
+	border-radius:10px;
+}
+.shape {
+	float: left;
+	width: 30px; height: 340px;
+	-webkit-shape-outside: polygon(0 0, 0 150px, 16px 154px, 30px 166px, 30px 314px, 16px 326px, 0 330px, 0 0);
+	shape-outside: polygon(0 0, 0 150px, 16px 154px, 30px 166px, 30px 314px, 16px 326px, 0 330px, 0 0);
+	transition: -webkit-shape-outside .15s;
+	transition: shape-outside .15s;
+}
+.liuhai {
+	width: 24px; height: 180px;
+	background: url(liu.png) no-repeat left center;
+	position: absolute;
+	margin-top: 100px;
+}
+.content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.content li {
+	border-bottom: 1px solid #eee;
+	padding: .5em;
+}
+</style>
+</head>
+<body>
+<div class="demo">
+  <div id="box" class="box">
+	<i id="shape" class="shape"></i>
+    <i class="liuhai"></i>
+    <div class="content">
+    	<ul>
+        	<li>为了防止看花眼</li>
+            <li>我就手动敲下面的文字</li>
+            <li>原本我偷懒</li>
+            <li>直接就是列表1，列表2</li>
+            <li>后来测试发现不行</li>
+            <li>内容太接近</li>
+            <li>滚动时候</li>
+            <li>无法准确感受到靠近效果</li>
+            <li>这样是不行的</li>
+            <li>做东西就要精益求精</li>
+            <li>demo页面也应如此</li>
+            <li>然后这里的刘海形状只是近似</li>
+            <li>两个圆角要模拟</li>
+            <li>需要更细致的shape-outside设置</li>
+            <li>这里仅仅使用两个转角点表示</li>
+            <li>而且为了和后面的内容有间隙</li>
+            <li>shape区域右侧</li>
+            <li>刻意扩大了大约5像素</li>
+            <li>现在看到的刘海</li>
+            <li>是覆盖上面的一个图</li>
+            <li>实际生效的是后面浮动的shape</li>
+            <li>在iOS 10.2之前还需要webkit</li>
+            <li>私有前缀</li>
+            <li>因此，实际代码还需要webkit</li>
+            <li>Chrome可以不需要</li>
+            <li>然后此功能需要JS配合</li>
+            <li>只能对内联信息进行跟随控制</li>
+            <li>理论上还可以使用CSS region实现</li>
+            <li>但没有这个方法容易理解</li>
+        </ul>
+    </div>
+  </div>  
+</div>
+<!--
+<script>
+var eleShape = document.getElementById('shape');
+var eleBox = document.getElementById('box');
+
+var funShape = function () {
+	var scrollTop = eleBox.scrollTop;
+	// 滚动偏移应用在margin-top上
+	eleShape.style.marginTop = (150 + scrollTop) + 'px';
+};
+// 滚动时候实时改变shape形状
+eleBox.addEventListener('scroll', funShape);
+funShape();
+</script>
+-->
+<script type="text/javascript">
+var eleShape = document.getElementById('shape');
+var eleBox = document.getElementById('box');
+eleShape.style.height = eleBox.scrollHeight + 'px';
+
+var funShape = function () {
+	var scrollTop = eleBox.scrollTop;
+	// 滚动偏移应用在shape-outside上
+	var shapeOutside = 'polygon(0 0, 0 '+ (100 + scrollTop) +'px, 16px '+ (104 + scrollTop) +'px, 30px '+ (116 + scrollTop) +'px, 30px '+ (264 + scrollTop) +'px, 16px '+ (276 + scrollTop) +'px, 0 '+ (280 + scrollTop) +'px, 0 0)';
+	eleShape.style.webkitShapeOutside = shapeOutside;
+	eleShape.style.shapeOutside = shapeOutside;
+};
+// 滚动时候实时改变shape形状
+eleBox.addEventListener('scroll', funShape);
+funShape();
+</script>
+</body>
+</html>
