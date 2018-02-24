@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><title>vue-music</title><link href=static/css/app.9f5d4e5a0b0b727ea403acd1c342e96d.css rel=stylesheet></head><body><div id=app></div><script>(function() {
+            var OriginTitile = document.title, titleTime;
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    document.title = '死鬼去哪里了！';
+                    clearTimeout(titleTime);
+                } else {
+                    document.title = '(つェ⊂)咦!又好了!';
+                    titleTime = setTimeout(function() {
+                        document.title = OriginTitile;
+                    },2000);
+                }
+            });
+        })();</script><script type=text/javascript src=static/js/manifest.d4ff07e3a0163a247710.js></script><script type=text/javascript src=static/js/vendor.d3dc0508b50801ee16b6.js></script><script type=text/javascript src=static/js/app.96bade46d685a52fe290.js></script></body></html>
